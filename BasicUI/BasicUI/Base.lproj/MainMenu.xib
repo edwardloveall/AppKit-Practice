@@ -14,9 +14,7 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="BasicUI" customModuleProvider="target">
             <connections>
-                <outlet property="timeButton" destination="FhI-Jk-3aD" id="6aP-az-Eiw"/>
-                <outlet property="timeLabel" destination="aIJ-dT-QhN" id="7WQ-Yj-eYs"/>
-                <outlet property="window" destination="QvC-M9-y7g" id="aFA-tl-0aO"/>
+                <outlet property="mainWindow" destination="QvC-M9-y7g" id="gjl-Zo-Y69"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
@@ -679,18 +677,18 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FhI-Jk-3aD">
-                        <rect key="frame" x="16" y="312" width="77" height="32"/>
+                        <rect key="frame" x="14" y="312" width="77" height="32"/>
                         <animations/>
                         <buttonCell key="cell" type="push" title="Time?" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7xr-33-p1J">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="time:" target="Voe-Tx-rLC" id="adN-qT-Tie"/>
+                            <action selector="time:" target="8xi-bJ-OnU" id="8CD-Xj-C0r"/>
                         </connections>
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aIJ-dT-QhN">
-                        <rect key="frame" x="95" y="323" width="367" height="17"/>
+                        <rect key="frame" x="91" y="323" width="371" height="17"/>
                         <animations/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="nuO-r0-f82">
                             <font key="font" metaFont="system"/>
@@ -702,5 +700,11 @@
                 <animations/>
             </view>
         </window>
+        <customObject id="8xi-bJ-OnU" customClass="ThingController" customModule="BasicUI" customModuleProvider="target">
+            <connections>
+                <outlet property="timeButton" destination="FhI-Jk-3aD" id="3bt-Dm-fkz"/>
+                <outlet property="timeLabel" destination="aIJ-dT-QhN" id="QTF-AE-kGC"/>
+            </connections>
+        </customObject>
     </objects>
 </document>

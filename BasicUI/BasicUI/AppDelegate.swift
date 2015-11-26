@@ -10,10 +10,7 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
-    @IBOutlet weak var window: NSWindow!
-    @IBOutlet weak var timeLabel: NSTextField!
-    @IBOutlet weak var timeButton: NSButton!
+    @IBOutlet weak var mainWindow: NSWindow!
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
 
@@ -21,15 +18,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillTerminate(aNotification: NSNotification) {
         // Insert code here to tear down your application
-    }
-
-    @IBAction func time(sender: AnyObject) {
-        let now = NSDate()
-        let formatter = NSDateFormatter()
-        formatter.timeStyle = .ShortStyle
-        formatter.dateStyle = .ShortStyle
-
-        timeLabel.stringValue = formatter.stringFromDate(now)
     }
 }
 
