@@ -12,6 +12,16 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var mainWindow: NSWindow!
 
+    // putting outlet and label in AppDel to see if button is active as expected
+    @IBOutlet weak var appDelLabel: NSTextField!
+    @IBAction func appDelButton(sender: AnyObject) {
+        let now = NSDate()
+        let formatter = NSDateFormatter()
+        formatter.timeStyle = .ShortStyle
+        formatter.dateStyle = .ShortStyle
+        
+        appDelLabel.stringValue = formatter.stringFromDate(now) + " from App Delegate"
+    }
     func applicationDidFinishLaunching(aNotification: NSNotification) {
 
     }
