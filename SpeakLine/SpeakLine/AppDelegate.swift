@@ -9,7 +9,7 @@
 import Cocoa
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, NSSpeechSynthesizerDelegate {
 
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var speakButton: NSButton!
@@ -19,6 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         speechSynth = NSSpeechSynthesizer.init(voice: nil)
+        speechSynth?.delegate = self
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
@@ -28,10 +29,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func sayIt(sender: AnyObject) {
         let string = sourceText.stringValue
         speechSynth?.startSpeakingString(string)
+        stopButton.enabled = true
+        speakButton.enabled = false
     }
 
     @IBAction func stopIt(sender: AnyObject) {
         speechSynth?.stopSpeaking()
     }
-}
 
+    func speechSynthesizer(sender: NSSpeechSynthesizer, didFinishSpeaking finishedSpeaking: Bool) {
+        stopButton.enabled = false
+        speakButton.enabled = true
+    }
+}

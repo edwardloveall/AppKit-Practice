@@ -269,6 +269,7 @@
 				390C2BCC1C076550009E6EC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
