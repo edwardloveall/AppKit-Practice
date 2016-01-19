@@ -14,10 +14,14 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="ToDoList" customModuleProvider="target">
             <connections>
-                <outlet property="addButton" destination="2iP-de-JXo" id="XnW-if-Bf8"/>
-                <outlet property="todoField" destination="wT7-0o-4Hr" id="YNA-Pc-lKZ"/>
-                <outlet property="todoTable" destination="YJQ-er-lx4" id="GXb-yY-OC6"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="jOt-wW-3mN" customClass="TodoItemSource" customModule="ToDoList" customModuleProvider="target">
+            <connections>
+                <outlet property="addButton" destination="2iP-de-JXo" id="XbR-Oc-Zcn"/>
+                <outlet property="todoField" destination="wT7-0o-4Hr" id="wzm-tl-Bqe"/>
+                <outlet property="todoTable" destination="YJQ-er-lx4" id="W4H-cn-nVo"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
@@ -686,7 +690,7 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="addItem:" target="Voe-Tx-rLC" id="QcT-i2-wsV"/>
+                            <action selector="addItem:" target="jOt-wW-3mN" id="DtT-6q-EAk"/>
                         </connections>
                     </button>
                     <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lxi-4s-kZu">
@@ -717,8 +721,8 @@
                                         </tableColumn>
                                     </tableColumns>
                                     <connections>
-                                        <outlet property="dataSource" destination="Voe-Tx-rLC" id="nJT-ai-USW"/>
-                                        <outlet property="delegate" destination="Voe-Tx-rLC" id="AjL-1G-57K"/>
+                                        <outlet property="dataSource" destination="jOt-wW-3mN" id="ndn-3J-Vvb"/>
+                                        <outlet property="delegate" destination="jOt-wW-3mN" id="qbA-tI-QZj"/>
                                     </connections>
                                 </tableView>
                             </subviews>
@@ -745,7 +749,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <action selector="addItem:" target="Voe-Tx-rLC" id="tee-9d-7ua"/>
+                            <action selector="addItem:" target="jOt-wW-3mN" id="Q58-7M-ZBU"/>
                         </connections>
                     </textField>
                 </subviews>

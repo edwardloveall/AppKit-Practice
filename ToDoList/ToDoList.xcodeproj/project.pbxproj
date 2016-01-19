@@ -10,6 +10,7 @@
 		3946ED191C4EB53F0069DCF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3946ED181C4EB53F0069DCF8 /* AppDelegate.swift */; };
 		3946ED1B1C4EB53F0069DCF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3946ED1A1C4EB53F0069DCF8 /* Assets.xcassets */; };
 		3946ED1E1C4EB53F0069DCF8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3946ED1C1C4EB53F0069DCF8 /* MainMenu.xib */; };
+		3946ED261C4ED8720069DCF8 /* TodoItemSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3946ED251C4ED8720069DCF8 /* TodoItemSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +19,7 @@
 		3946ED1A1C4EB53F0069DCF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3946ED1D1C4EB53F0069DCF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		3946ED1F1C4EB53F0069DCF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3946ED251C4ED8720069DCF8 /* TodoItemSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItemSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				3946ED181C4EB53F0069DCF8 /* AppDelegate.swift */,
+				3946ED251C4ED8720069DCF8 /* TodoItemSource.swift */,
 				3946ED1A1C4EB53F0069DCF8 /* Assets.xcassets */,
 				3946ED1C1C4EB53F0069DCF8 /* MainMenu.xib */,
 				3946ED1F1C4EB53F0069DCF8 /* Info.plist */,
@@ -129,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3946ED191C4EB53F0069DCF8 /* AppDelegate.swift in Sources */,
+				3946ED261C4ED8720069DCF8 /* TodoItemSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
