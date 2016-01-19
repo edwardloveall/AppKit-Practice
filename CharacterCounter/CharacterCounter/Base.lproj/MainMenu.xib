@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -674,14 +674,13 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yg6-yj-Drk">
                         <rect key="frame" x="319" y="282" width="147" height="32"/>
-                        <animations/>
                         <buttonCell key="cell" type="push" title="Count Characters" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="PiA-px-lLi">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -692,7 +691,6 @@
                     </button>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G8W-jd-xP1">
                         <rect key="frame" x="20" y="318" width="440" height="22"/>
-                        <animations/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="PIW-i6-zhC">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -701,7 +699,6 @@
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y4Y-IM-7Xo">
                         <rect key="frame" x="18" y="293" width="301" height="17"/>
-                        <animations/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="O2b-tJ-f2I">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -709,7 +706,6 @@
                         </textFieldCell>
                     </textField>
                 </subviews>
-                <animations/>
             </view>
         </window>
     </objects>
