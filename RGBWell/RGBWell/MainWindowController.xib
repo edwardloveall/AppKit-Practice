@@ -7,7 +7,10 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="RGBWell" customModuleProvider="target">
             <connections>
+                <outlet property="bSlider" destination="tuE-Wi-ZGx" id="qOw-LK-Bpf"/>
                 <outlet property="colorWell" destination="PdW-MS-NXy" id="L3D-8x-BUB"/>
+                <outlet property="gSlider" destination="D1b-h8-FjE" id="wSk-t6-RNF"/>
+                <outlet property="rSlider" destination="C6E-Hd-HIo" id="zwR-s0-P8e"/>
                 <outlet property="window" destination="eQ1-h9-1hW" id="t6i-3O-N6N"/>
             </connections>
         </customObject>
@@ -24,10 +27,10 @@
                 <subviews>
                     <colorWell fixedFrame="YES" enabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdW-MS-NXy">
                         <rect key="frame" x="20" y="20" width="160" height="160"/>
-                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="color" red="0.9999127984046936" green="1" blue="0.99988144636154175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </colorWell>
                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C6E-Hd-HIo">
-                        <rect key="frame" x="203" y="115" width="141" height="20"/>
+                        <rect key="frame" x="203" y="115" width="141" height="21"/>
                         <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" doubleValue="1" tickMarkPosition="above" sliderType="linear" id="6LQ-8U-KT9"/>
                         <connections>
                             <action selector="adjustRed:" target="-2" id="e16-0E-O8K"/>
@@ -42,7 +45,7 @@
                         </textFieldCell>
                     </textField>
                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D1b-h8-FjE">
-                        <rect key="frame" x="203" y="91" width="141" height="20"/>
+                        <rect key="frame" x="203" y="91" width="141" height="21"/>
                         <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" doubleValue="1" tickMarkPosition="above" sliderType="linear" id="Bub-mo-bGi"/>
                         <connections>
                             <action selector="adjustGreen:" target="-2" id="8M9-nB-Iv6"/>
@@ -57,7 +60,7 @@
                         </textFieldCell>
                     </textField>
                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tuE-Wi-ZGx">
-                        <rect key="frame" x="203" y="67" width="141" height="20"/>
+                        <rect key="frame" x="203" y="67" width="141" height="21"/>
                         <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" doubleValue="1" tickMarkPosition="above" sliderType="linear" id="pVK-z1-Faw"/>
                         <connections>
                             <action selector="adjustBlue:" target="-2" id="YSw-hI-btt"/>
