@@ -7,6 +7,13 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="BusyBoard" customModuleProvider="target">
             <connections>
+                <outlet property="checkBox" destination="PUl-jj-ivZ" id="yDT-Ew-rkN"/>
+                <outlet property="hideTicksRadio" destination="tqH-OB-noh" id="RHt-R1-DFI"/>
+                <outlet property="normalText" destination="Lja-bu-pPh" id="GO6-xj-RR0"/>
+                <outlet property="secureText" destination="Bqh-0z-8QS" id="u5J-ba-In0"/>
+                <outlet property="showTicksRadio" destination="vWr-Mx-tlg" id="mwq-5R-nMt"/>
+                <outlet property="slider" destination="ifR-Qd-yns" id="K2E-Uy-t2B"/>
+                <outlet property="sliderLabel" destination="Fl8-2d-Y8k" id="rir-KD-rfa"/>
                 <outlet property="window" destination="29M-5n-Icp" id="RNd-K8-k8H"/>
             </connections>
         </customObject>
@@ -20,6 +27,104 @@
             <view key="contentView" id="h1V-Ap-Nb8">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ifR-Qd-yns">
+                        <rect key="frame" x="18" y="58" width="20" height="193"/>
+                        <sliderCell key="cell" continuous="YES" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="right" sliderType="linear" id="gfQ-Uw-cDi"/>
+                        <connections>
+                            <action selector="moveSlider:" target="-2" id="gP5-Py-0BU"/>
+                        </connections>
+                    </slider>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fwd-g4-x8P">
+                        <rect key="frame" x="14" y="13" width="130" height="32"/>
+                        <buttonCell key="cell" type="push" title="Reset Controls" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="azs-zx-lKR">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="resetControls:" target="-2" id="mlY-H5-XpK"/>
+                        </connections>
+                    </button>
+                    <button fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="vWr-Mx-tlg">
+                        <rect key="frame" x="57" y="82" width="158" height="18"/>
+                        <buttonCell key="cell" type="radio" title="Show slider tick marks" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="XSI-20-4vv">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="toggleTickMarks:" target="-2" id="bUj-Qo-gTh"/>
+                        </connections>
+                    </button>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tqH-OB-noh">
+                        <rect key="frame" x="57" y="60" width="153" height="18"/>
+                        <buttonCell key="cell" type="radio" title="Hide slider tick marks" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="u2g-r6-WHs">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="toggleTickMarks:" target="-2" id="bHl-MN-owy"/>
+                        </connections>
+                    </button>
+                    <box horizontalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Cf2-xE-mpr">
+                        <rect key="frame" x="238" y="20" width="5" height="238"/>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <font key="titleFont" metaFont="system"/>
+                    </box>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PUl-jj-ivZ">
+                        <rect key="frame" x="312" y="234" width="114" height="18"/>
+                        <buttonCell key="cell" type="check" title="Check Me!" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Mer-tj-Rdu">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="checkMe:" target="-2" id="bjt-vb-scN"/>
+                        </connections>
+                    </button>
+                    <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="iE1-9o-XyZ">
+                        <rect key="frame" x="249" y="218" width="219" height="5"/>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <font key="titleFont" metaFont="system"/>
+                    </box>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lja-bu-pPh">
+                        <rect key="frame" x="249" y="20" width="219" height="76"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="BQ6-sR-RP8">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <secureTextField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bqh-0z-8QS">
+                        <rect key="frame" x="249" y="133" width="219" height="79"/>
+                        <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Type in a secret message" drawsBackground="YES" usesSingleLineMode="YES" id="ops-xe-BL0">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            <allowedInputSourceLocales>
+                                <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                            </allowedInputSourceLocales>
+                        </secureTextFieldCell>
+                    </secureTextField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hsH-Uy-fdX">
+                        <rect key="frame" x="243" y="97" width="231" height="32"/>
+                        <buttonCell key="cell" type="push" title="Reveal the secret message" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="asL-f5-cL5">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="revealMessage:" target="-2" id="JpW-Tk-nZT"/>
+                        </connections>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fl8-2d-Y8k">
+                        <rect key="frame" x="42" y="192" width="192" height="58"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="8we-zd-8AK">
+                            <font key="font" metaFont="system" size="20"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
             </view>
             <point key="canvasLocation" x="446" y="458"/>
         </window>
