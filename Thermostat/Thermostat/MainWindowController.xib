@@ -25,6 +25,7 @@
                         <rect key="frame" x="18" y="17" width="20" height="235"/>
                         <sliderCell key="cell" continuous="YES" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="right" sliderType="linear" id="qAy-bF-VxV"/>
                         <connections>
+                            <binding destination="-2" name="enabled" keyPath="isOn" id="rdm-RK-p1g"/>
                             <binding destination="-2" name="value" keyPath="temperature" id="1ct-As-heE"/>
                         </connections>
                     </slider>
@@ -47,6 +48,7 @@
                         </buttonCell>
                         <connections>
                             <action selector="makeWarmer:" target="-2" id="YWg-ot-pT4"/>
+                            <binding destination="-2" name="enabled" keyPath="isOn" id="WDT-Na-oHu"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eks-9R-N1y">
@@ -57,6 +59,17 @@
                         </buttonCell>
                         <connections>
                             <action selector="makeCooler:" target="-2" id="BBs-oE-f54"/>
+                            <binding destination="-2" name="enabled" keyPath="isOn" id="dDJ-JF-f9O"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IU9-Ys-7WU">
+                        <rect key="frame" x="121" y="26" width="78" height="19"/>
+                        <buttonCell key="cell" type="recessed" title="Power" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wKS-xu-3nW">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                            <font key="font" metaFont="systemBold" size="12"/>
+                        </buttonCell>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="isOn" id="zS5-Ob-p8i"/>
                         </connections>
                     </button>
                 </subviews>
