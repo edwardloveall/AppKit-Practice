@@ -1,0 +1,297 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		394277B81C85074500685A69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394277B71C85074500685A69 /* AppDelegate.swift */; };
+		394277BA1C85074500685A69 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394277B91C85074500685A69 /* Document.swift */; };
+		394277BD1C85074500685A69 /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = 394277BB1C85074500685A69 /* Document.xib */; };
+		394277BF1C85074500685A69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 394277BE1C85074500685A69 /* Assets.xcassets */; };
+		394277C21C85074500685A69 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 394277C01C85074500685A69 /* MainMenu.xib */; };
+		39FD6C791C8746CF00BD5B8D /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FD6C781C8746CF00BD5B8D /* Employee.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		394277B41C85074500685A69 /* PayRaise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayRaise.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		394277B71C85074500685A69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		394277B91C85074500685A69 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		394277BC1C85074500685A69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Document.xib; sourceTree = "<group>"; };
+		394277BE1C85074500685A69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		394277C11C85074500685A69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		394277C31C85074500685A69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39FD6C781C8746CF00BD5B8D /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		394277B11C85074500685A69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		394277AB1C85074500685A69 = {
+			isa = PBXGroup;
+			children = (
+				394277B61C85074500685A69 /* PayRaise */,
+				394277B51C85074500685A69 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		394277B51C85074500685A69 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				394277B41C85074500685A69 /* PayRaise.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		394277B61C85074500685A69 /* PayRaise */ = {
+			isa = PBXGroup;
+			children = (
+				394277B71C85074500685A69 /* AppDelegate.swift */,
+				394277B91C85074500685A69 /* Document.swift */,
+				394277BB1C85074500685A69 /* Document.xib */,
+				394277BE1C85074500685A69 /* Assets.xcassets */,
+				394277C01C85074500685A69 /* MainMenu.xib */,
+				394277C31C85074500685A69 /* Info.plist */,
+				39FD6C781C8746CF00BD5B8D /* Employee.swift */,
+			);
+			path = PayRaise;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		394277B31C85074500685A69 /* PayRaise */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 394277C61C85074500685A69 /* Build configuration list for PBXNativeTarget "PayRaise" */;
+			buildPhases = (
+				394277B01C85074500685A69 /* Sources */,
+				394277B11C85074500685A69 /* Frameworks */,
+				394277B21C85074500685A69 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PayRaise;
+			productName = PayRaise;
+			productReference = 394277B41C85074500685A69 /* PayRaise.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		394277AC1C85074500685A69 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Edward Loveall";
+				TargetAttributes = {
+					394277B31C85074500685A69 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 394277AF1C85074500685A69 /* Build configuration list for PBXProject "PayRaise" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 394277AB1C85074500685A69;
+			productRefGroup = 394277B51C85074500685A69 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				394277B31C85074500685A69 /* PayRaise */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		394277B21C85074500685A69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				394277BF1C85074500685A69 /* Assets.xcassets in Resources */,
+				394277BD1C85074500685A69 /* Document.xib in Resources */,
+				394277C21C85074500685A69 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		394277B01C85074500685A69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				394277BA1C85074500685A69 /* Document.swift in Sources */,
+				39FD6C791C8746CF00BD5B8D /* Employee.swift in Sources */,
+				394277B81C85074500685A69 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		394277BB1C85074500685A69 /* Document.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				394277BC1C85074500685A69 /* Base */,
+			);
+			name = Document.xib;
+			sourceTree = "<group>";
+		};
+		394277C01C85074500685A69 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				394277C11C85074500685A69 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		394277C41C85074500685A69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		394277C51C85074500685A69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		394277C71C85074500685A69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PayRaise/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.edwardloveall.PayRaise;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		394277C81C85074500685A69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PayRaise/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.edwardloveall.PayRaise;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		394277AF1C85074500685A69 /* Build configuration list for PBXProject "PayRaise" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				394277C41C85074500685A69 /* Debug */,
+				394277C51C85074500685A69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		394277C61C85074500685A69 /* Build configuration list for PBXNativeTarget "PayRaise" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				394277C71C85074500685A69 /* Debug */,
+				394277C81C85074500685A69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 394277AC1C85074500685A69 /* Project object */;
+}
