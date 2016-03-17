@@ -29,7 +29,7 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="add:" target="oJK-ZV-T9m" id="iVh-hv-ihv"/>
+                            <action selector="addEmployee:" target="-2" id="QKH-od-zeC"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ok7-VD-jYl">

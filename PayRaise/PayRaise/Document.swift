@@ -8,9 +8,22 @@
 
 import Cocoa
 
-class Document: NSDocument {
+private var KVOContext = 0
 
-    var employees: [Employee] = []
+class Document: NSDocument, NSWindowDelegate {
+
+    var employees: [Employee] = [] {
+        willSet {
+            for employee in employees {
+                stopObservingEmployee(employee)
+            }
+        }
+        didSet {
+            for employee in employees {
+                startObservingEmployee(employee)
+            }
+        }
+    }
 
     override init() {
         super.init()
@@ -45,6 +58,61 @@ class Document: NSDocument {
         throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
     }
 
+    func insertObject(employee: Employee, inEmployeesAtIndex index: Int) {
+        if let undo = undoManager {
+            undo.prepareWithInvocationTarget(self).removeObjectFromEmployeesAtIndex(employees.count)
 
+            if undo.undoing == false {
+                undo.setActionName("Add Person")
+            }
+        }
+
+        employees.append(employee)
+    }
+
+    func removeObjectFromEmployeesAtIndex(index: Int) {
+        let employee = employees[index]
+
+        if let undo = undoManager {
+            undo.prepareWithInvocationTarget(self).insertObject(employee, inEmployeesAtIndex: index)
+
+            if undo.undoing == false {
+                undo.setActionName("Remove Person")
+            }
+        }
+
+        employees.removeAtIndex(index)
+    }
+
+    func startObservingEmployee(employee: Employee) {
+        employee.addObserver(self, forKeyPath: "name", options: .Old, context: &KVOContext)
+        employee.addObserver(self, forKeyPath: "raise", options: .Old, context: &KVOContext)
+    }
+
+    func stopObservingEmployee(employee: Employee) {
+        employee.removeObserver(self, forKeyPath: "name", context: &KVOContext)
+        employee.removeObserver(self, forKeyPath: "raise", context: &KVOContext)
+    }
+
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+        if context != &KVOContext {
+            super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
+            return
+        }
+
+        if let keyPath = keyPath, object = object, change = change {
+            var oldValue = change[NSKeyValueChangeOldKey]
+            if oldValue is NSNull {
+                oldValue = nil
+            }
+
+            if let undo = undoManager {
+                undo.prepareWithInvocationTarget(object).setValue(oldValue, forKeyPath: keyPath)
+            }
+        }
+    }
+
+    func windowWillClose(notification: NSNotification) {
+        employees = []
+    }
 }
-
