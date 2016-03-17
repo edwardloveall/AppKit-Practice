@@ -11,6 +11,8 @@ import Cocoa
 private var KVOContext = 0
 
 class Document: NSDocument, NSWindowDelegate {
+    @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var arrayController: NSArrayController!
 
     var employees: [Employee] = [] {
         willSet {
@@ -56,6 +58,31 @@ class Document: NSDocument, NSWindowDelegate {
         // You can also choose to override readFromFileWrapper:ofType:error: or readFromURL:ofType:error: instead.
         // If you override either of these, you should also override -isEntireFileLoaded to return false if the contents are lazily loaded.
         throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
+    }
+
+    @IBAction func addEmployee(sender: NSButton) {
+        let windowController = windowControllers[0]
+        let window = windowController.window!
+
+        let endedEditing = window.makeFirstResponder(window)
+        if !endedEditing {
+            print("Unable to end editing.")
+            return
+        }
+
+        if let undo = undoManager {
+            if undo.groupingLevel > 0 {
+                undo.endUndoGrouping()
+                undo.beginUndoGrouping()
+            }
+        }
+
+        let employee = arrayController.newObject() as! Employee
+        arrayController.addObject(employee)
+        arrayController.rearrangeObjects()
+        let sortedEmployees = arrayController.arrangedObjects as! [Employee]
+        let row = sortedEmployees.indexOf(employee)!
+        tableView.editColumn(0, row: row, withEvent: nil, select: true)
     }
 
     func insertObject(employee: Employee, inEmployeesAtIndex index: Int) {

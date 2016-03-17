@@ -7,6 +7,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="Document" customModule="PayRaise" customModuleProvider="target">
             <connections>
+                <outlet property="arrayController" destination="oJK-ZV-T9m" id="GYf-FG-Oj4"/>
+                <outlet property="tableView" destination="eKg-n0-F0m" id="IN0-zZ-n14"/>
                 <outlet property="window" destination="xOd-HO-29H" id="JIz-fz-R2o"/>
             </connections>
         </customObject>
