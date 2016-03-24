@@ -8,9 +8,19 @@
 
 import Foundation
 
-class Employee: NSObject {
+class Employee: NSObject, NSCoding {
     var name: String? = "New Employee"
     var raise: Float = 0.05
+
+    override init() {
+        super.init()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        name = aDecoder.decodeObjectForKey("name") as! String?
+        raise = aDecoder.decodeFloatForKey("raise")
+        super.init()
+    }
 
     func validateRaise(raiseNumberPointer: AutoreleasingUnsafeMutablePointer<NSNumber?>, error outError: NSErrorPointer) -> Bool {
         let raiseNumber = raiseNumberPointer.memory
@@ -23,5 +33,12 @@ class Employee: NSObject {
         } else {
             return true
         }
+    }
+
+    func encodeWithCoder(aCoder: NSCoder) {
+        if let name = name {
+            aCoder.encodeObject(name, forKey: "name")
+        }
+        aCoder.encodeFloat(raise, forKey: "raise")
     }
 }
