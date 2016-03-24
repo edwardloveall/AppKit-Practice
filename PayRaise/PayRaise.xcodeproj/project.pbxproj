@@ -12,6 +12,7 @@
 		394277BD1C85074500685A69 /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = 394277BB1C85074500685A69 /* Document.xib */; };
 		394277BF1C85074500685A69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 394277BE1C85074500685A69 /* Assets.xcassets */; };
 		394277C21C85074500685A69 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 394277C01C85074500685A69 /* MainMenu.xib */; };
+		39683A671CA45E3A00E3AE3A /* file.icns in Resources */ = {isa = PBXBuildFile; fileRef = 39683A661CA45E3A00E3AE3A /* file.icns */; };
 		39FD6C791C8746CF00BD5B8D /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FD6C781C8746CF00BD5B8D /* Employee.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		394277BE1C85074500685A69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		394277C11C85074500685A69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		394277C31C85074500685A69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39683A661CA45E3A00E3AE3A /* file.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = file.icns; sourceTree = "<group>"; };
 		39FD6C781C8746CF00BD5B8D /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +65,7 @@
 				394277C01C85074500685A69 /* MainMenu.xib */,
 				394277C31C85074500685A69 /* Info.plist */,
 				39FD6C781C8746CF00BD5B8D /* Employee.swift */,
+				39683A661CA45E3A00E3AE3A /* file.icns */,
 			);
 			path = PayRaise;
 			sourceTree = "<group>";
@@ -125,6 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39683A671CA45E3A00E3AE3A /* file.icns in Resources */,
 				394277BF1C85074500685A69 /* Assets.xcassets in Resources */,
 				394277BD1C85074500685A69 /* Document.xib in Resources */,
 				394277C21C85074500685A69 /* MainMenu.xib in Resources */,
