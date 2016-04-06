@@ -126,6 +126,16 @@
                             <action selector="stopIt:" target="-2" id="J6j-W0-NYK"/>
                         </connections>
                     </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ube-BE-foz">
+                        <rect key="frame" x="14" y="13" width="75" height="32"/>
+                        <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="D2l-fP-Qfx">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="reset:" target="-2" id="op6-Xv-aFs"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <connections>

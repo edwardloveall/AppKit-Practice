@@ -45,4 +45,9 @@ class PreferenceManager {
         ]
         userDefaults.registerDefaults(defaults)
     }
+
+    func resetPreferences() {
+        userDefaults.removeObjectForKey(activeVoiceKey)
+        userDefaults.removeObjectForKey(activeTextKey)
+    }
 }

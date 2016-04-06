@@ -31,6 +31,10 @@ class MainWindowController: NSWindowController, NSSpeechSynthesizerDelegate, NSW
         super.windowDidLoad()
         updateButtons()
         speechSynth.delegate = self
+        setInterface()
+    }
+
+    func setInterface() {
         let defaultVoice = preferenceManager.activeVoice!
         if let defaultRow = voices.indexOf(defaultVoice) {
             let indices = NSIndexSet(index: defaultRow)
@@ -69,6 +73,11 @@ class MainWindowController: NSWindowController, NSSpeechSynthesizerDelegate, NSW
     func voiceNameForIdentifier(identifier: String) -> String? {
         let attributes = NSSpeechSynthesizer.attributesForVoice(identifier)
         return attributes[NSVoiceName] as? String
+    }
+
+    @IBAction func reset(sender: NSButton) {
+        preferenceManager.resetPreferences()
+        setInterface()
     }
 
     // MARK: - NSSpeechSynthesizerDelegate
