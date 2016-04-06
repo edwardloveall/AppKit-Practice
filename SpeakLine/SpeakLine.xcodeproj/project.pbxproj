@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39A418431CB58F5C0062E849 /* PreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A418421CB58F5C0062E849 /* PreferenceManager.swift */; };
 		39F700F11C6CCD1A00C6AE48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F700F01C6CCD1A00C6AE48 /* AppDelegate.swift */; };
 		39F700F31C6CCD1A00C6AE48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39F700F21C6CCD1A00C6AE48 /* Assets.xcassets */; };
 		39F700F61C6CCD1A00C6AE48 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39F700F41C6CCD1A00C6AE48 /* MainMenu.xib */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		39A418421CB58F5C0062E849 /* PreferenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceManager.swift; sourceTree = "<group>"; };
 		39F700ED1C6CCD1A00C6AE48 /* SpeakLine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeakLine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F700F01C6CCD1A00C6AE48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39F700F21C6CCD1A00C6AE48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 				39F700F21C6CCD1A00C6AE48 /* Assets.xcassets */,
 				39F700F41C6CCD1A00C6AE48 /* MainMenu.xib */,
 				39F700FD1C6CCD9900C6AE48 /* MainWindowController.swift */,
+				39A418421CB58F5C0062E849 /* PreferenceManager.swift */,
 				39F700FE1C6CCD9900C6AE48 /* MainWindowController.xib */,
 				39F700F71C6CCD1A00C6AE48 /* Info.plist */,
 			);
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39F700FF1C6CCD9900C6AE48 /* MainWindowController.swift in Sources */,
+				39A418431CB58F5C0062E849 /* PreferenceManager.swift in Sources */,
 				39F700F11C6CCD1A00C6AE48 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +281,7 @@
 				39F700FC1C6CCD1A00C6AE48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
