@@ -99,12 +99,15 @@ class Document: NSDocument, NSWindowDelegate {
         alert.messageText = "Do you really want to remove these people?"
         alert.informativeText = "\(selectedPeople.count) will be removed."
         alert.addButtonWithTitle("Remove")
+        alert.addButtonWithTitle("No raise")
         alert.addButtonWithTitle("Cancel")
         let window = sender.window!
         alert.beginSheetModalForWindow(window, completionHandler: { (response) -> Void in
             switch response {
             case NSAlertFirstButtonReturn:
                 self.arrayController.remove(nil)
+            case NSAlertSecondButtonReturn:
+                self.removeRaiseForEmployees(selectedPeople)
             default: break
             }
         })
@@ -122,6 +125,13 @@ class Document: NSDocument, NSWindowDelegate {
         }
 
         employees.removeAtIndex(index)
+    }
+
+    func removeRaiseForEmployees(employees: [Employee]) {
+        for employee in employees {
+            employee.raise = 0
+        }
+        tableView.reloadData()
     }
 
     func startObservingEmployee(employee: Employee) {
