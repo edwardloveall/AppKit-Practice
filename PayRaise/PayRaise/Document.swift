@@ -93,6 +93,23 @@ class Document: NSDocument, NSWindowDelegate {
         employees.append(employee)
     }
 
+    @IBAction func removeEmployees(sender: NSButton) {
+        let selectedPeople: [Employee] = arrayController.selectedObjects as! [Employee]
+        let alert = NSAlert()
+        alert.messageText = "Do you really want to remove these people?"
+        alert.informativeText = "\(selectedPeople.count) will be removed."
+        alert.addButtonWithTitle("Remove")
+        alert.addButtonWithTitle("Cancel")
+        let window = sender.window!
+        alert.beginSheetModalForWindow(window, completionHandler: { (response) -> Void in
+            switch response {
+            case NSAlertFirstButtonReturn:
+                self.arrayController.remove(nil)
+            default: break
+            }
+        })
+    }
+
     func removeObjectFromEmployeesAtIndex(index: Int) {
         let employee = employees[index]
 
