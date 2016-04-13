@@ -1,0 +1,286 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		39091F3E1CBEC723002AFA2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39091F3D1CBEC723002AFA2B /* AppDelegate.swift */; };
+		39091F401CBEC723002AFA2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39091F3F1CBEC723002AFA2B /* Assets.xcassets */; };
+		39091F431CBEC723002AFA2B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39091F411CBEC723002AFA2B /* MainMenu.xib */; };
+		39091F4C1CBEC7DE002AFA2B /* ChatWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39091F4A1CBEC7DE002AFA2B /* ChatWindowController.swift */; };
+		39091F4D1CBEC7DE002AFA2B /* ChatWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39091F4B1CBEC7DE002AFA2B /* ChatWindowController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		39091F3A1CBEC723002AFA2B /* Chatter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chatter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		39091F3D1CBEC723002AFA2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		39091F3F1CBEC723002AFA2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		39091F421CBEC723002AFA2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		39091F441CBEC723002AFA2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39091F4A1CBEC7DE002AFA2B /* ChatWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatWindowController.swift; sourceTree = "<group>"; };
+		39091F4B1CBEC7DE002AFA2B /* ChatWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatWindowController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		39091F371CBEC723002AFA2B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		39091F311CBEC723002AFA2B = {
+			isa = PBXGroup;
+			children = (
+				39091F3C1CBEC723002AFA2B /* Chatter */,
+				39091F3B1CBEC723002AFA2B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		39091F3B1CBEC723002AFA2B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				39091F3A1CBEC723002AFA2B /* Chatter.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		39091F3C1CBEC723002AFA2B /* Chatter */ = {
+			isa = PBXGroup;
+			children = (
+				39091F3D1CBEC723002AFA2B /* AppDelegate.swift */,
+				39091F4A1CBEC7DE002AFA2B /* ChatWindowController.swift */,
+				39091F4B1CBEC7DE002AFA2B /* ChatWindowController.xib */,
+				39091F3F1CBEC723002AFA2B /* Assets.xcassets */,
+				39091F411CBEC723002AFA2B /* MainMenu.xib */,
+				39091F441CBEC723002AFA2B /* Info.plist */,
+			);
+			path = Chatter;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		39091F391CBEC723002AFA2B /* Chatter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39091F471CBEC723002AFA2B /* Build configuration list for PBXNativeTarget "Chatter" */;
+			buildPhases = (
+				39091F361CBEC723002AFA2B /* Sources */,
+				39091F371CBEC723002AFA2B /* Frameworks */,
+				39091F381CBEC723002AFA2B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Chatter;
+			productName = Chatter;
+			productReference = 39091F3A1CBEC723002AFA2B /* Chatter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		39091F321CBEC723002AFA2B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Edward Loveall";
+				TargetAttributes = {
+					39091F391CBEC723002AFA2B = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 39091F351CBEC723002AFA2B /* Build configuration list for PBXProject "Chatter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 39091F311CBEC723002AFA2B;
+			productRefGroup = 39091F3B1CBEC723002AFA2B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				39091F391CBEC723002AFA2B /* Chatter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		39091F381CBEC723002AFA2B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39091F401CBEC723002AFA2B /* Assets.xcassets in Resources */,
+				39091F431CBEC723002AFA2B /* MainMenu.xib in Resources */,
+				39091F4D1CBEC7DE002AFA2B /* ChatWindowController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		39091F361CBEC723002AFA2B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39091F3E1CBEC723002AFA2B /* AppDelegate.swift in Sources */,
+				39091F4C1CBEC7DE002AFA2B /* ChatWindowController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		39091F411CBEC723002AFA2B /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				39091F421CBEC723002AFA2B /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		39091F451CBEC723002AFA2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		39091F461CBEC723002AFA2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		39091F481CBEC723002AFA2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Chatter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.edwardloveall.Chatter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		39091F491CBEC723002AFA2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Chatter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.edwardloveall.Chatter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		39091F351CBEC723002AFA2B /* Build configuration list for PBXProject "Chatter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39091F451CBEC723002AFA2B /* Debug */,
+				39091F461CBEC723002AFA2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		39091F471CBEC723002AFA2B /* Build configuration list for PBXNativeTarget "Chatter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39091F481CBEC723002AFA2B /* Debug */,
+				39091F491CBEC723002AFA2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 39091F321CBEC723002AFA2B /* Project object */;
+}
