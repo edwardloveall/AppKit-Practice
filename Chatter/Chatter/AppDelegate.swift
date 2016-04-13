@@ -14,6 +14,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         addWindowController()
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.addObserver(self, selector: #selector(self.beep), name: "NSApplicationDidResignActiveNotification", object: nil)
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
@@ -30,5 +32,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         windowController.showWindow(self)
         windowControllers.append(windowController)
     }
-}
 
+    func beep() {
+        NSBeep()
+    }
+}
