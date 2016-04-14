@@ -12,6 +12,7 @@
 		39091F431CBEC723002AFA2B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39091F411CBEC723002AFA2B /* MainMenu.xib */; };
 		39091F4C1CBEC7DE002AFA2B /* ChatWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39091F4A1CBEC7DE002AFA2B /* ChatWindowController.swift */; };
 		39091F4D1CBEC7DE002AFA2B /* ChatWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39091F4B1CBEC7DE002AFA2B /* ChatWindowController.xib */; };
+		396FD32F1CBF252500B11FB3 /* IsNotEmptyTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396FD32E1CBF252500B11FB3 /* IsNotEmptyTransformer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		39091F441CBEC723002AFA2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39091F4A1CBEC7DE002AFA2B /* ChatWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatWindowController.swift; sourceTree = "<group>"; };
 		39091F4B1CBEC7DE002AFA2B /* ChatWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatWindowController.xib; sourceTree = "<group>"; };
+		396FD32E1CBF252500B11FB3 /* IsNotEmptyTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsNotEmptyTransformer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				39091F3D1CBEC723002AFA2B /* AppDelegate.swift */,
 				39091F4A1CBEC7DE002AFA2B /* ChatWindowController.swift */,
+				396FD32E1CBF252500B11FB3 /* IsNotEmptyTransformer.swift */,
 				39091F4B1CBEC7DE002AFA2B /* ChatWindowController.xib */,
 				39091F3F1CBEC723002AFA2B /* Assets.xcassets */,
 				39091F411CBEC723002AFA2B /* MainMenu.xib */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				396FD32F1CBF252500B11FB3 /* IsNotEmptyTransformer.swift in Sources */,
 				39091F3E1CBEC723002AFA2B /* AppDelegate.swift in Sources */,
 				39091F4C1CBEC7DE002AFA2B /* ChatWindowController.swift in Sources */,
 			);
@@ -279,6 +283,7 @@
 				39091F491CBEC723002AFA2B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

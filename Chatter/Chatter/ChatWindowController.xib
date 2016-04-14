@@ -30,6 +30,11 @@
                         </buttonCell>
                         <connections>
                             <action selector="send:" target="-2" id="fJW-om-aeE"/>
+                            <binding destination="-2" name="enabled" keyPath="message" id="nDf-uc-xL4">
+                                <dictionary key="options">
+                                    <string key="NSValueTransformerName">IsNotEmptyTransformer</string>
+                                </dictionary>
+                            </binding>
                         </connections>
                     </button>
                     <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUI-3I-UdT">
@@ -65,7 +70,7 @@
                     </scrollView>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rNs-r8-irJ">
                         <rect key="frame" x="20" y="19" width="98" height="22"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="Name" placeholderString="Username" drawsBackground="YES" id="NuL-dD-5Cr">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Username" drawsBackground="YES" id="NuL-dD-5Cr">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -83,7 +88,11 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <binding destination="-2" name="value" keyPath="message" id="q9t-UN-Ydd"/>
+                            <binding destination="-2" name="value" keyPath="message" id="8Kd-DI-QXa">
+                                <dictionary key="options">
+                                    <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                </dictionary>
+                            </binding>
                             <outlet property="nextKeyView" destination="rNs-r8-irJ" id="hBb-1c-OeJ"/>
                         </connections>
                     </textField>

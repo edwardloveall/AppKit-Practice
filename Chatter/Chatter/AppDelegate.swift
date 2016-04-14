@@ -16,6 +16,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         addWindowController()
         let notificationCenter = NSNotificationCenter.defaultCenter()
         notificationCenter.addObserver(self, selector: #selector(self.beep), name: "NSApplicationDidResignActiveNotification", object: nil)
+        let isNotEmpty = IsNotEmptyTransformer()
+        NSValueTransformer.setValueTransformer(isNotEmpty, forName: "IsNotEmptyTransformer")
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
