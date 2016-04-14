@@ -14,6 +14,7 @@ private let ChatWindowControllerMessageKey = "com.edwardloveall.Chatter.ChatWind
 class ChatWindowController: NSWindowController {
     dynamic var log: NSAttributedString = NSAttributedString(string: "")
     dynamic var message: String?
+    dynamic var username: String?
 
     override var windowNibName: String? {
         return "ChatWindowController"
@@ -36,7 +37,9 @@ class ChatWindowController: NSWindowController {
         guard let message = message else {
             return
         }
-        let userInfo = [ChatWindowControllerMessageKey : message]
+        let username = self.username ?? "Someone"
+        let fullMessage = "\(username): \(message)"
+        let userInfo = [ChatWindowControllerMessageKey : fullMessage]
         let notificationCenter = NSNotificationCenter.defaultCenter()
         notificationCenter.postNotificationName(ChatWindowControllerDidSendMessageNotification,
                                                 object: self,
@@ -46,6 +49,7 @@ class ChatWindowController: NSWindowController {
 
     func receiveDidSendMessageNotification(note: NSNotification) {
         let mutableLog = log.mutableCopy() as! NSMutableAttributedString
+
         if log.length > 0 {
             mutableLog.appendAttributedString(NSAttributedString(string: "\n"))
         }
@@ -53,7 +57,14 @@ class ChatWindowController: NSWindowController {
         let userInfo = note.userInfo! as! [String: String]
         let message = userInfo[ChatWindowControllerMessageKey]!
 
-        let logLine = NSAttributedString(string: message)
+        var attributes = Dictionary<String, AnyObject>()
+        if let sender = note.object as? ChatWindowController {
+            if sender == self {
+                attributes = [NSForegroundColorAttributeName: NSColor.blueColor()]
+            }
+        }
+
+        let logLine = NSAttributedString(string: message, attributes: attributes)
         mutableLog.appendAttributedString(logLine)
 
         log = mutableLog.copy() as! NSAttributedString
