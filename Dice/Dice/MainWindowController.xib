@@ -23,6 +23,11 @@
                 <subviews>
                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="aAa-nt-bPy" customClass="DieView" customModule="Dice" customModuleProvider="target">
                         <rect key="frame" x="20" y="20" width="440" height="230"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="dotCount">
+                                <integer key="value" value="6"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </customView>
                 </subviews>
                 <constraints>
