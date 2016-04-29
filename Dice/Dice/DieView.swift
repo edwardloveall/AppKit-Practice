@@ -1,7 +1,7 @@
 import Cocoa
 
 class DieView: NSView {
-    var dotCount: Int? = 1 {
+    var dotCount: Int? = 3 {
         didSet {
             needsDisplay = true
         }
@@ -12,7 +12,10 @@ class DieView: NSView {
     }
 
     override func drawRect(dirtyRect: NSRect) {
-        let backgroundColor = NSColor.darkGrayColor()
+        let backgroundColor = NSColor(red: 0.06,
+                                      green: 0.62,
+                                      blue: 0.12,
+                                      alpha: 1.0)
         backgroundColor.set()
         NSBezierPath.fillRect(bounds)
 
@@ -46,26 +49,35 @@ class DieView: NSView {
             shadow.shadowBlurRadius = edgeLength / 20
             shadow.set()
 
-            let startColor = NSColor.init(calibratedWhite: 0.8, alpha: 1)
-            if let gradient = NSGradient(startingColor: startColor,
-                                         endingColor: NSColor.whiteColor()) {
-                let diePath = NSBezierPath(roundedRect: dieFrame,
-                                           xRadius: cornerRadius,
-                                           yRadius: cornerRadius)
-                gradient.drawInBezierPath(diePath, angle: -45)
-            }
+            let diePath = NSBezierPath(roundedRect: dieFrame,
+                                       xRadius: cornerRadius,
+                                       yRadius: cornerRadius)
+            NSColor.whiteColor().set()
+            diePath.fill()
 
             NSGraphicsContext.restoreGraphicsState()
 
+            NSColor.blackColor().set()
+            diePath.lineWidth = edgeLength / 80
+            diePath.stroke()
+
             func drawDot(horizontalOffset: CGFloat, _ verticalOffset: CGFloat) {
-                let dotOrigin = CGPoint(x: dotFrame.minX + dotFrame.width * horizontalOffset,
-                                        y: dotFrame.minY + dotFrame.height * verticalOffset)
+                let x = dotFrame.minX + dotFrame.width * horizontalOffset
+                let y = dotFrame.minY + dotFrame.height * verticalOffset
+                let dotOrigin = CGPoint(x: x, y: y)
                 let dotRect = CGRect(origin: dotOrigin, size: CGSizeZero)
                     .insetBy(dx: -dotRadius, dy: -dotRadius)
+                NSColor.blackColor().set()
                 NSBezierPath(ovalInRect: dotRect).fill()
-            }
 
-            NSColor.blackColor().set()
+                NSColor(calibratedWhite: 1, alpha: 0.6).set()
+                let glintRadius = dotRadius * 0.2
+                let glintOrigin = CGPoint(x: dotOrigin.x + glintRadius,
+                                          y: dotOrigin.y - glintRadius)
+                let glintRect = CGRect(origin: glintOrigin, size: CGSizeZero)
+                    .insetBy(dx: -glintRadius, dy: -glintRadius)
+                NSBezierPath(ovalInRect: glintRect).fill()
+            }
 
             if (1...6).indexOf(dotCount) != nil {
                 if dotCount % 2 == 1 {
