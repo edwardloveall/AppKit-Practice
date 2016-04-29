@@ -12,7 +12,7 @@ class DieView: NSView {
     }
 
     override func drawRect(dirtyRect: NSRect) {
-        let backgroundColor = NSColor.lightGrayColor()
+        let backgroundColor = NSColor.darkGrayColor()
         backgroundColor.set()
         NSBezierPath.fillRect(bounds)
 
@@ -46,10 +46,14 @@ class DieView: NSView {
             shadow.shadowBlurRadius = edgeLength / 20
             shadow.set()
 
-            NSColor.whiteColor().set()
-            NSBezierPath(roundedRect: dieFrame,
-                         xRadius: cornerRadius,
-                         yRadius: cornerRadius).fill()
+            let startColor = NSColor.init(calibratedWhite: 0.8, alpha: 1)
+            if let gradient = NSGradient(startingColor: startColor,
+                                         endingColor: NSColor.whiteColor()) {
+                let diePath = NSBezierPath(roundedRect: dieFrame,
+                                           xRadius: cornerRadius,
+                                           yRadius: cornerRadius)
+                gradient.drawInBezierPath(diePath, angle: -45)
+            }
 
             NSGraphicsContext.restoreGraphicsState()
 
