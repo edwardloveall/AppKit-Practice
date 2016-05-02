@@ -17,6 +17,8 @@ import Cocoa
         return CGSize(width: 20, height: 20)
     }
 
+    var diePath = NSBezierPath()
+
     override func drawRect(dirtyRect: NSRect) {
         let backgroundColor = NSColor(red: 0.06,
                                       green: 0.62,
@@ -62,7 +64,7 @@ import Cocoa
         }
         shadow.set()
 
-        let diePath = NSBezierPath(roundedRect: dieFrame,
+        diePath = NSBezierPath(roundedRect: dieFrame,
                                    xRadius: cornerRadius,
                                    yRadius: cornerRadius)
         NSColor.whiteColor().set()
@@ -119,9 +121,8 @@ import Cocoa
     }
 
     override func mouseDown(theEvent: NSEvent) {
-        let dieFrame = metricsForSize(bounds.size).dieFrame
         let pointInView = convertPoint(theEvent.locationInWindow, fromView: nil)
-        pressed = dieFrame.contains(pointInView)
+        pressed = diePath.containsPoint(pointInView)
     }
 
     override func mouseUp(theEvent: NSEvent) {
