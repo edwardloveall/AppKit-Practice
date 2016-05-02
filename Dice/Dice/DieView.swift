@@ -7,6 +7,12 @@ import Cocoa
         }
     }
 
+    var pressed: Bool = false {
+        didSet {
+            needsDisplay = true
+        }
+    }
+
     override var intrinsicContentSize: NSSize {
         return CGSize(width: 20, height: 20)
     }
@@ -29,7 +35,11 @@ import Cocoa
                                    y: 0,
                                    width: edgeLength,
                                    height: edgeLength)
-        let dieFrame = drawingBounds.insetBy(dx: padding, dy: padding)
+        var dieFrame = drawingBounds.insetBy(dx: padding, dy: padding)
+        if pressed {
+            dieFrame = dieFrame.offsetBy(dx: 0, dy: -edgeLength / 40)
+        }
+
         return (edgeLength, dieFrame)
     }
 
@@ -45,7 +55,11 @@ import Cocoa
 
         let shadow = NSShadow()
         shadow.shadowOffset = NSSize(width: 0, height: -1)
-        shadow.shadowBlurRadius = edgeLength / 20
+        if pressed {
+            shadow.shadowBlurRadius = edgeLength / 100
+        } else {
+            shadow.shadowBlurRadius = edgeLength / 20
+        }
         shadow.set()
 
         let diePath = NSBezierPath(roundedRect: dieFrame,
@@ -98,5 +112,22 @@ import Cocoa
                 drawDot(1, 0.5)
             }
         }
+    }
+
+    func randomize() {
+        dotCount = Int(arc4random_uniform(5)) + 1
+    }
+
+    override func mouseDown(theEvent: NSEvent) {
+        let dieFrame = metricsForSize(bounds.size).dieFrame
+        let pointInView = convertPoint(theEvent.locationInWindow, fromView: nil)
+        pressed = dieFrame.contains(pointInView)
+    }
+
+    override func mouseUp(theEvent: NSEvent) {
+        if pressed && theEvent.clickCount == 2 {
+            randomize()
+        }
+        pressed = false
     }
 }
