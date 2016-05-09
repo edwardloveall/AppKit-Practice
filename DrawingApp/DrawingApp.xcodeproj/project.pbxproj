@@ -12,6 +12,8 @@
 		392E0BDD1CE113650023D8FE /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = 392E0BDB1CE113650023D8FE /* Document.xib */; };
 		392E0BDF1CE113650023D8FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 392E0BDE1CE113650023D8FE /* Assets.xcassets */; };
 		392E0BE21CE113650023D8FE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 392E0BE01CE113650023D8FE /* MainMenu.xib */; };
+		392E0BEA1CE113840023D8FE /* Oval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392E0BE91CE113840023D8FE /* Oval.swift */; };
+		392E0BEC1CE11B540023D8FE /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392E0BEB1CE11B540023D8FE /* CanvasView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		392E0BDE1CE113650023D8FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		392E0BE11CE113650023D8FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		392E0BE31CE113650023D8FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		392E0BE91CE113840023D8FE /* Oval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Oval.swift; sourceTree = "<group>"; };
+		392E0BEB1CE11B540023D8FE /* CanvasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +59,10 @@
 			isa = PBXGroup;
 			children = (
 				392E0BD71CE113650023D8FE /* AppDelegate.swift */,
+				392E0BE91CE113840023D8FE /* Oval.swift */,
 				392E0BD91CE113650023D8FE /* Document.swift */,
 				392E0BDB1CE113650023D8FE /* Document.xib */,
+				392E0BEB1CE11B540023D8FE /* CanvasView.swift */,
 				392E0BDE1CE113650023D8FE /* Assets.xcassets */,
 				392E0BE01CE113650023D8FE /* MainMenu.xib */,
 				392E0BE31CE113650023D8FE /* Info.plist */,
@@ -135,7 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				392E0BEA1CE113840023D8FE /* Oval.swift in Sources */,
 				392E0BDA1CE113650023D8FE /* Document.swift in Sources */,
+				392E0BEC1CE11B540023D8FE /* CanvasView.swift in Sources */,
 				392E0BD81CE113650023D8FE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
