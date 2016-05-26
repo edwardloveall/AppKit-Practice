@@ -17,6 +17,8 @@ import Cocoa
         return CGSize(width: 20, height: 20)
     }
 
+    override var acceptsFirstResponder: Bool { return true }
+
     var diePath = NSBezierPath()
 
     override func drawRect(dirtyRect: NSRect) {
@@ -130,5 +132,26 @@ import Cocoa
             randomize()
         }
         pressed = false
+    }
+
+    override func becomeFirstResponder() -> Bool {
+        return true
+    }
+
+    override func resignFirstResponder() -> Bool {
+        return true
+    }
+
+    override func keyDown(theEvent: NSEvent) {
+        interpretKeyEvents([theEvent])
+    }
+
+    override func insertText(insertString: AnyObject) {
+        guard let numberString = insertString as? String,
+              let number = Int(numberString) else {
+            Swift.print("could not convert input \"\(insertString)\" into number")
+            return
+        }
+        dotCount = number
     }
 }
