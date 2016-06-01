@@ -8,7 +8,12 @@
 
 import Cocoa
 
-class MainWindowController: NSWindowController, NSSpeechSynthesizerDelegate, NSWindowDelegate, NSTableViewDataSource, NSTableViewDelegate, NSTextFieldDelegate {
+class MainWindowController: NSWindowController,
+                            NSSpeechSynthesizerDelegate,
+                            NSWindowDelegate,
+                            NSTableViewDataSource,
+                            NSTableViewDelegate,
+                            NSTextFieldDelegate {
     @IBOutlet weak var textField: NSTextField!
     @IBOutlet weak var speakButton: NSButton!
     @IBOutlet weak var stopButton: NSButton!
@@ -20,6 +25,7 @@ class MainWindowController: NSWindowController, NSSpeechSynthesizerDelegate, NSW
     var isStarted: Bool = false {
         didSet {
             updateButtons()
+            disableTextField()
         }
     }
 
@@ -70,6 +76,14 @@ class MainWindowController: NSWindowController, NSSpeechSynthesizerDelegate, NSW
         }
     }
 
+    func disableTextField() {
+        if isStarted {
+            textField.enabled = false
+        } else {
+            textField.enabled = true
+        }
+    }
+
     func voiceNameForIdentifier(identifier: String) -> String? {
         let attributes = NSSpeechSynthesizer.attributesForVoice(identifier)
         return attributes[NSVoiceName] as? String
@@ -82,8 +96,20 @@ class MainWindowController: NSWindowController, NSSpeechSynthesizerDelegate, NSW
 
     // MARK: - NSSpeechSynthesizerDelegate
 
-    func speechSynthesizer(sender: NSSpeechSynthesizer, didFinishSpeaking finishedSpeaking: Bool) {
+    func speechSynthesizer(sender: NSSpeechSynthesizer,
+                           didFinishSpeaking finishedSpeaking: Bool) {
         isStarted = false
+        textField.stringValue = textField.stringValue
+    }
+
+    func speechSynthesizer(sender: NSSpeechSynthesizer,
+                           willSpeakWord characterRange: NSRange,
+                           ofString string: String) {
+        let attributedString = NSMutableAttributedString(string: string)
+        attributedString.addAttribute(NSForegroundColorAttributeName,
+                                      value: NSColor.purpleColor(),
+                                      range: characterRange)
+        textField.attributedStringValue = attributedString
     }
 
     // MARK: - NSWindowDelegate
@@ -98,7 +124,9 @@ class MainWindowController: NSWindowController, NSSpeechSynthesizerDelegate, NSW
         return voices.count
     }
 
-    func tableView(tableView: NSTableView, objectValueForTableColumn tableColumn: NSTableColumn?, row: Int) -> AnyObject? {
+    func tableView(tableView: NSTableView,
+                   objectValueForTableColumn tableColumn: NSTableColumn?,
+                   row: Int) -> AnyObject? {
         let voice = voices[row]
         let voiceName = voiceNameForIdentifier(voice)
         return voiceName
