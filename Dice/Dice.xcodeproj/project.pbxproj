@@ -13,6 +13,7 @@
 		3900A3571CD1235B000075FB /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3900A3551CD1235B000075FB /* MainWindowController.swift */; };
 		3900A3581CD1235B000075FB /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3900A3561CD1235B000075FB /* MainWindowController.xib */; };
 		3900A35A1CD123FE000075FB /* DieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3900A3591CD123FE000075FB /* DieView.swift */; };
+		390807C21CFF183000D397D4 /* NSString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390807C11CFF183000D397D4 /* NSString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		3900A3551CD1235B000075FB /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		3900A3561CD1235B000075FB /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
 		3900A3591CD123FE000075FB /* DieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DieView.swift; sourceTree = "<group>"; };
+		390807C11CFF183000D397D4 /* NSString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSString.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		3900A3471CD122CB000075FB /* Dice */ = {
 			isa = PBXGroup;
 			children = (
+				390807C01CFF181400D397D4 /* Extensions */,
 				3900A3481CD122CB000075FB /* AppDelegate.swift */,
 				3900A3551CD1235B000075FB /* MainWindowController.swift */,
 				3900A3561CD1235B000075FB /* MainWindowController.xib */,
@@ -65,6 +68,14 @@
 				3900A34F1CD122CC000075FB /* Info.plist */,
 			);
 			path = Dice;
+			sourceTree = "<group>";
+		};
+		390807C01CFF181400D397D4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				390807C11CFF183000D397D4 /* NSString.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3900A3571CD1235B000075FB /* MainWindowController.swift in Sources */,
+				390807C21CFF183000D397D4 /* NSString.swift in Sources */,
 				3900A3491CD122CB000075FB /* AppDelegate.swift in Sources */,
 				3900A35A1CD123FE000075FB /* DieView.swift in Sources */,
 			);
@@ -283,6 +295,7 @@
 				3900A3541CD122CC000075FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

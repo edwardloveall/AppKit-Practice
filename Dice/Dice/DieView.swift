@@ -116,6 +116,19 @@ import Cocoa
                 drawDot(0, 0.5)
                 drawDot(1, 0.5)
             }
+        } else {
+            let paraStyle = NSParagraphStyle
+                .defaultParagraphStyle()
+                .mutableCopy() as! NSMutableParagraphStyle
+            paraStyle.alignment = .Center
+            let font = NSFont.systemFontOfSize(edgeLength * 0.5)
+            let attrs = [
+                NSForegroundColorAttributeName: NSColor.blackColor(),
+                NSFontAttributeName: font,
+                NSParagraphStyleAttributeName: paraStyle
+            ]
+            let string = "\(dotCount)" as NSString
+            string.drawCenteredInRect(dieFrame, attributes: attrs)
         }
     }
 
