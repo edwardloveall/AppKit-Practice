@@ -18,13 +18,14 @@ import Cocoa
     }
 
     override var acceptsFirstResponder: Bool { return true }
+    override var focusRingMaskBounds: NSRect { return bounds }
 
     var diePath = NSBezierPath()
 
     override func drawRect(dirtyRect: NSRect) {
-        let backgroundColor = NSColor(red: 0.06,
+        let backgroundColor = NSColor(red: 0.62,
                                       green: 0.62,
-                                      blue: 0.12,
+                                      blue: 0.62,
                                       alpha: 1.0)
         backgroundColor.set()
         NSBezierPath.fillRect(bounds)
@@ -153,5 +154,17 @@ import Cocoa
             return
         }
         dotCount = number
+    }
+
+    override func insertTab(sender: AnyObject?) {
+        window?.selectNextKeyView(sender)
+    }
+
+    override func insertBacktab(sender: AnyObject?) {
+        window?.selectPreviousKeyView(sender)
+    }
+
+    override func drawFocusRingMask() {
+        NSBezierPath.fillRect(bounds)
     }
 }
