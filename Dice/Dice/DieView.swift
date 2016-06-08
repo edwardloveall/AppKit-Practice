@@ -187,7 +187,7 @@ import Cocoa
         savePanel.beginSheetModalForWindow(window!) {
             [unowned savePanel] (result) in
             if result == NSModalResponseOK {
-                let data = self.dataWithPDFInsideRect(self.bounds)
+                let data = PDFCreator(view: self).data(inside: self.bounds)
                 do {
                     try data.writeToURL(savePanel.URL!,
                                         options: NSDataWritingOptions.DataWritingAtomic)
@@ -202,11 +202,13 @@ import Cocoa
     }
 
     @IBAction func cut(sender: AnyObject?) {
-        Pasteboard.writeToPasteboard(dotCount)
+        let data = PDFCreator(view: self).data(inside: self.bounds)
+        Pasteboard.writeToPasteboard((int: dotCount, data: data))
     }
 
     @IBAction func copy(sender: AnyObject?) {
-        Pasteboard.writeToPasteboard(dotCount)
+        let data = PDFCreator(view: self).data(inside: self.bounds)
+        Pasteboard.writeToPasteboard((int: dotCount, data: data))
     }
 
     @IBAction func paste(sender: AnyObject?) {

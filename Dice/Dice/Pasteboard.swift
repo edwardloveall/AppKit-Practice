@@ -1,10 +1,13 @@
 import Cocoa
 
 class Pasteboard {
-    class func writeToPasteboard(value: Int) {
+    class func writeToPasteboard(values: (int: Int, data: NSData)) {
         let pasteboard = NSPasteboard.generalPasteboard()
+        let item = NSPasteboardItem()
+        item.setString(String(values.int), forType: NSPasteboardTypeString)
+        item.setData(values.data, forType: NSPasteboardTypePDF)
         pasteboard.clearContents()
-        pasteboard.writeObjects(["\(value)"])
+        pasteboard.writeObjects([item])
     }
 
     class func readFromPasteboard() -> Int? {
