@@ -200,4 +200,18 @@ import Cocoa
             }
         }
     }
+
+    @IBAction func cut(sender: AnyObject?) {
+        Pasteboard.writeToPasteboard(dotCount)
+    }
+
+    @IBAction func copy(sender: AnyObject?) {
+        Pasteboard.writeToPasteboard(dotCount)
+    }
+
+    @IBAction func paste(sender: AnyObject?) {
+        if let value = Pasteboard.readFromPasteboard() {
+            dotCount = value
+        }
+    }
 }

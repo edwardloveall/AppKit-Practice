@@ -14,6 +14,7 @@
 		3900A3581CD1235B000075FB /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3900A3561CD1235B000075FB /* MainWindowController.xib */; };
 		3900A35A1CD123FE000075FB /* DieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3900A3591CD123FE000075FB /* DieView.swift */; };
 		390807C21CFF183000D397D4 /* NSString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390807C11CFF183000D397D4 /* NSString.swift */; };
+		3930D5861D08545600B3586D /* Pasteboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930D5851D08545600B3586D /* Pasteboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		3900A3561CD1235B000075FB /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
 		3900A3591CD123FE000075FB /* DieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DieView.swift; sourceTree = "<group>"; };
 		390807C11CFF183000D397D4 /* NSString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSString.swift; sourceTree = "<group>"; };
+		3930D5851D08545600B3586D /* Pasteboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pasteboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				3900A3551CD1235B000075FB /* MainWindowController.swift */,
 				3900A3561CD1235B000075FB /* MainWindowController.xib */,
 				3900A3591CD123FE000075FB /* DieView.swift */,
+				3930D5851D08545600B3586D /* Pasteboard.swift */,
 				3900A34A1CD122CC000075FB /* Assets.xcassets */,
 				3900A34C1CD122CC000075FB /* MainMenu.xib */,
 				3900A34F1CD122CC000075FB /* Info.plist */,
@@ -151,6 +154,7 @@
 			files = (
 				3900A3571CD1235B000075FB /* MainWindowController.swift in Sources */,
 				390807C21CFF183000D397D4 /* NSString.swift in Sources */,
+				3930D5861D08545600B3586D /* Pasteboard.swift in Sources */,
 				3900A3491CD122CB000075FB /* AppDelegate.swift in Sources */,
 				3900A35A1CD123FE000075FB /* DieView.swift in Sources */,
 			);
