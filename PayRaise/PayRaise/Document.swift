@@ -93,7 +93,7 @@ class Document: NSDocument, NSWindowDelegate {
         employees.append(employee)
     }
 
-    @IBAction func removeEmployees(sender: NSButton) {
+    @IBAction func removeEmployees(sender: AnyObject) {
         let selectedPeople: [Employee] = arrayController.selectedObjects as! [Employee]
         let alert = NSAlert()
         if selectedPeople.count == 1 {
@@ -139,6 +139,15 @@ class Document: NSDocument, NSWindowDelegate {
             employee.raise = 0
         }
         tableView.reloadData()
+    }
+
+    override func validateMenuItem(menuItem: NSMenuItem) -> Bool {
+        switch menuItem.action {
+        case #selector(self.removeEmployees(_:)):
+            return !arrayController.selectedObjects.isEmpty
+        default:
+            return super.validateMenuItem(menuItem)
+        }
     }
 
     func startObservingEmployee(employee: Employee) {
