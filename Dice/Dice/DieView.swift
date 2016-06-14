@@ -13,6 +13,12 @@ import Cocoa
         }
     }
 
+    var highlightForDragging: Bool = false {
+        didSet {
+            needsDisplay = true
+        }
+    }
+
     override var intrinsicContentSize: NSSize {
         return CGSize(width: 20, height: 20)
     }
@@ -23,6 +29,20 @@ import Cocoa
     var mouseDownEvent: NSEvent?
     var diePath = NSBezierPath()
 
+    override init(frame frameRect: NSRect) {
+        super.init(frame: frameRect)
+        commonInit()
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        commonInit()
+    }
+
+    func commonInit() {
+        self.registerForDraggedTypes([NSPasteboardTypeString])
+    }
+
     override func drawRect(dirtyRect: NSRect) {
         let backgroundColor = NSColor(red: 0.62,
                                       green: 0.62,
@@ -31,7 +51,14 @@ import Cocoa
         backgroundColor.set()
         NSBezierPath.fillRect(bounds)
 
-        drawDieWithSize(bounds.size)
+        if highlightForDragging {
+            if let gradient = NSGradient(startingColor: NSColor.whiteColor(),
+                                         endingColor: backgroundColor) {
+                gradient.drawInRect(bounds, relativeCenterPosition: NSZeroPoint)
+            }
+        } else {
+            drawDieWithSize(bounds.size)
+        }
     }
 
     func metricsForSize(size: CGSize) -> (edgeLength: CGFloat, dieFrame: CGRect) {
@@ -225,6 +252,37 @@ import Cocoa
         return .Copy
     }
 
+    // MARK: - Drag Destination
+
+    override func draggingEntered(sender: NSDraggingInfo) -> NSDragOperation {
+        if sender.draggingSource() === self {
+            return .None
+        }
+        highlightForDragging = true
+        return sender.draggingSourceOperationMask()
+    }
+
+    override func draggingExited(sender: NSDraggingInfo?) {
+        highlightForDragging = false
+    }
+
+    override func prepareForDragOperation(sender: NSDraggingInfo) -> Bool {
+        return true
+    }
+
+    override func performDragOperation(sender: NSDraggingInfo) -> Bool {
+        guard let value = Pasteboard.readFromPasteboard(sender.draggingPasteboard()),
+        let intValue = Int(value) else {
+            return false
+        }
+        dotCount = intValue
+        return true
+    }
+
+    override func concludeDragOperation(sender: NSDraggingInfo?) {
+        highlightForDragging = false
+    }
+
     // MARK: - Actions
 
     @IBAction func savePDF(sender: AnyObject!) {
@@ -258,8 +316,11 @@ import Cocoa
     }
 
     @IBAction func paste(sender: AnyObject?) {
-        if let value = Pasteboard.readFromPasteboard() {
-            dotCount = value
+        if let value = Pasteboard.readFromPasteboard(nil) {
+            guard let intValue = Int(value) else {
+                return
+            }
+            dotCount = intValue
         }
     }
 }

@@ -10,14 +10,14 @@ class Pasteboard {
         pasteboard.writeObjects([item])
     }
 
-    class func readFromPasteboard() -> Int? {
-        let pasteboard = NSPasteboard.generalPasteboard()
+    class func readFromPasteboard(pasteboard: NSPasteboard?) -> String? {
+        let pasteboard = pasteboard ?? NSPasteboard.generalPasteboard()
         let objects = pasteboard.readObjectsForClasses([NSString.self],
                                                        options: [:]) as! [String]
         if let string = objects.first {
-            return Int(string)
+            return string
         }
 
-        return Int?.None
+        return .None
     }
 }
