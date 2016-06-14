@@ -1,6 +1,6 @@
 import Cocoa
 
-@IBDesignable class DieView: NSView {
+@IBDesignable class DieView: NSView, NSDraggingSource {
     @IBInspectable dynamic var dotCount: Int = 1 {
         didSet {
             needsDisplay = true
@@ -20,6 +20,7 @@ import Cocoa
     override var acceptsFirstResponder: Bool { return true }
     override var focusRingMaskBounds: NSRect { return bounds }
 
+    var mouseDownEvent: NSEvent?
     var diePath = NSBezierPath()
 
     override func drawRect(dirtyRect: NSRect) {
@@ -137,6 +138,7 @@ import Cocoa
     }
 
     override func mouseDown(theEvent: NSEvent) {
+        mouseDownEvent = theEvent
         let pointInView = convertPoint(theEvent.locationInWindow, fromView: nil)
         pressed = diePath.containsPoint(pointInView)
     }
@@ -146,6 +148,41 @@ import Cocoa
             randomize()
         }
         pressed = false
+    }
+
+    override func mouseDragged(theEvent: NSEvent) {
+        let downPoint = mouseDownEvent!.locationInWindow
+        let dragPoint = theEvent.locationInWindow
+        let distanceDragged = hypot(downPoint.x - dragPoint.x,
+                                    downPoint.y - dragPoint.y)
+        if distanceDragged < 3 {
+            return
+        }
+
+        pressed = false
+
+        let imageSize = bounds.size
+        let image = NSImage(size: imageSize, flipped: false) { (imageBounds) in
+            self.drawDieWithSize(imageBounds.size)
+            return true
+        }
+
+        let draggingFrameOrigin = convertPoint(downPoint, fromView: nil)
+        let dragTopLeft = NSRect(origin: draggingFrameOrigin, size: imageSize)
+        let draggingFrame = dragTopLeft.offsetBy(dx: -imageSize.width / 2,
+                                                 dy: -imageSize.height / 2)
+        let item = NSDraggingItem(pasteboardWriter: "\(dotCount)")
+        item.draggingFrame = draggingFrame
+        item.imageComponentsProvider = {
+            let component = NSDraggingImageComponent(key: NSDraggingImageComponentIconKey)
+            component.contents = image
+            component.frame = NSRect(origin: NSPoint(), size: imageSize)
+            return [component]
+        }
+
+        beginDraggingSessionWithItems([item],
+                                      event: mouseDownEvent!,
+                                      source: self)
     }
 
     override func becomeFirstResponder() -> Bool {
@@ -180,6 +217,15 @@ import Cocoa
     override func drawFocusRingMask() {
         NSBezierPath.fillRect(bounds)
     }
+
+    // MARK: - Drag Source
+
+    func draggingSession(session: NSDraggingSession,
+                         sourceOperationMaskForDraggingContext context: NSDraggingContext) -> NSDragOperation {
+        return .Copy
+    }
+
+    // MARK: - Actions
 
     @IBAction func savePDF(sender: AnyObject!) {
         let savePanel = NSSavePanel()
