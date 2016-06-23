@@ -16,6 +16,7 @@
 		390807C21CFF183000D397D4 /* NSString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390807C11CFF183000D397D4 /* NSString.swift */; };
 		3930D5861D08545600B3586D /* Pasteboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930D5851D08545600B3586D /* Pasteboard.swift */; };
 		3930D5881D08655300B3586D /* PDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930D5871D08655300B3586D /* PDFCreator.swift */; };
+		39B0DAE21D1B723F00006126 /* Roller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B0DAE11D1B723F00006126 /* Roller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		390807C11CFF183000D397D4 /* NSString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSString.swift; sourceTree = "<group>"; };
 		3930D5851D08545600B3586D /* Pasteboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pasteboard.swift; sourceTree = "<group>"; };
 		3930D5871D08655300B3586D /* PDFCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFCreator.swift; sourceTree = "<group>"; };
+		39B0DAE11D1B723F00006126 /* Roller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Roller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				3900A3561CD1235B000075FB /* MainWindowController.xib */,
 				3900A3591CD123FE000075FB /* DieView.swift */,
 				3930D5851D08545600B3586D /* Pasteboard.swift */,
+				39B0DAE11D1B723F00006126 /* Roller.swift */,
 				3930D5871D08655300B3586D /* PDFCreator.swift */,
 				3900A34A1CD122CC000075FB /* Assets.xcassets */,
 				3900A34C1CD122CC000075FB /* MainMenu.xib */,
@@ -155,6 +158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39B0DAE21D1B723F00006126 /* Roller.swift in Sources */,
 				3900A3571CD1235B000075FB /* MainWindowController.swift in Sources */,
 				390807C21CFF183000D397D4 /* NSString.swift in Sources */,
 				3930D5861D08545600B3586D /* Pasteboard.swift in Sources */,

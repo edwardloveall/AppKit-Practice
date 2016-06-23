@@ -172,7 +172,7 @@ import Cocoa
 
     override func mouseUp(theEvent: NSEvent) {
         if pressed && theEvent.clickCount == 2 {
-            randomize()
+            Roller(dieView: self, window: window).roll()
         }
         pressed = false
     }
