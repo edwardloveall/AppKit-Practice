@@ -17,5 +17,4 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         mainWindowController.showWindow(self)
         self.mainWindowController = mainWindowController
     }
-
 }

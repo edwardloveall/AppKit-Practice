@@ -10,8 +10,8 @@ class Roller {
     self.window = window
   }
 
-  func roll(times: Int = 10) {
-    rollsRemaining = times
+  func roll() {
+    rollsRemaining = dieView.numberOfTimesToRoll
     NSTimer.scheduledTimerWithTimeInterval(
       0.15,
       target: self,
