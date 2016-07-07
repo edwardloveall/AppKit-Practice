@@ -19,6 +19,15 @@ class MainWindowController: NSWindowController {
     super.windowDidLoad()
   }
 
+  override func validateMenuItem(menuItem: NSMenuItem) -> Bool {
+    switch menuItem.action {
+    case #selector(MainWindowController.showDieConfiguration):
+      return window?.firstResponder is DieView?
+    default:
+      return super.validateMenuItem(menuItem)
+    }
+  }
+
   @IBAction func showDieConfiguration(sender: AnyObject?) {
     guard let window = window,
           let dieView = window.firstResponder as? DieView else {
