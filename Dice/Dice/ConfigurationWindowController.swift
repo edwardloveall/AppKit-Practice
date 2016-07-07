@@ -49,4 +49,16 @@ class ConfigurationWindowController: NSWindowController {
   func dismissWithModalResponse(response: NSModalResponse) {
     window?.sheetParent?.endSheet(window!, returnCode: response)
   }
+
+  func presentAsSheetOnWindow(window: NSWindow,
+                              completionHandler: (config: DieConfiguration?) -> ()) {
+    guard let myWindow = self.window else { fatalError("can't find window") }
+    window.beginSheet(myWindow, completionHandler: { response in
+      switch response {
+        case NSModalResponseOK: completionHandler(config: self.configuration)
+        case NSModalResponseCancel: completionHandler(config: nil)
+        default: completionHandler(config: nil)
+      }
+    })
+  }
 }

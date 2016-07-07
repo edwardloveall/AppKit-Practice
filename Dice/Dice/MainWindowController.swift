@@ -29,14 +29,9 @@ class MainWindowController: NSWindowController {
     let windowController = ConfigurationWindowController()
     windowController.configuration = DieConfiguration(color: dieView.color,
                                                       rolls: dieView.numberOfTimesToRoll)
-    guard let configWindow = windowController.window else {
-      print("could not retrieve configWindow")
-      return
-    }
 
-    window.beginSheet(configWindow, completionHandler: { response in
-      if response == NSModalResponseOK {
-        let configuration = self.configurationWindowController!.configuration
+    windowController.presentAsSheetOnWindow(window, completionHandler: { configuration in
+      if let configuration = configuration {
         dieView.color = configuration.color
         dieView.numberOfTimesToRoll = configuration.rolls
       }
