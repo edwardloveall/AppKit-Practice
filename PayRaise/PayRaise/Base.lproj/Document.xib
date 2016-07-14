@@ -7,8 +7,11 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="Document" customModule="PayRaise" customModuleProvider="target">
             <connections>
+                <outlet property="addEmployee" destination="kAJ-WF-EhV" id="gB1-ge-JMa"/>
                 <outlet property="arrayController" destination="oJK-ZV-T9m" id="GYf-FG-Oj4"/>
+                <outlet property="removeEmployee" destination="Ok7-VD-jYl" id="QIq-DB-904"/>
                 <outlet property="tableView" destination="eKg-n0-F0m" id="IN0-zZ-n14"/>
+                <outlet property="view" destination="gIp-Ho-8D9" id="8VE-cD-QjN"/>
                 <outlet property="window" destination="xOd-HO-29H" id="JIz-fz-R2o"/>
             </connections>
         </customObject>
@@ -79,8 +82,8 @@ CA
                                                     <rect key="frame" x="1" y="1" width="116" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i9G-qL-PvO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="17"/>
+                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="i9G-qL-PvO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="116" height="17"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" title="Table View Cell" id="R3k-PY-Gy5">
                                                                 <font key="font" metaFont="system"/>
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -121,8 +124,8 @@ CA
                                                     <rect key="frame" x="120" y="1" width="220" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qHY-iy-533">
-                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="17"/>
+                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="qHY-iy-533">
+                                                            <rect key="frame" x="0.0" y="0.0" width="220" height="17"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" title="Table View Cell" id="biy-7T-pj6">
                                                                 <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="percent" lenient="YES" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" id="LcQ-W3-qBK">
                                                                     <integer key="multiplier" value="100"/>
@@ -163,8 +166,8 @@ CA
                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </clipView>
                         <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="DW3-BT-hCH"/>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="iTl-pG-3C8"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" placeholder="YES" id="DW3-BT-hCH"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" placeholder="YES" id="iTl-pG-3C8"/>
                         </constraints>
                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="lMh-Gf-IuR">
                             <rect key="frame" x="1" y="148" width="0.0" height="16"/>
@@ -181,15 +184,16 @@ CA
                     </scrollView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="rRp-Z8-Mx8" secondAttribute="bottom" constant="20" symbolic="YES" id="ARY-2f-dia"/>
-                    <constraint firstItem="Ok7-VD-jYl" firstAttribute="leading" secondItem="rRp-Z8-Mx8" secondAttribute="trailing" constant="8" symbolic="YES" id="BHy-AW-XMj"/>
-                    <constraint firstItem="rRp-Z8-Mx8" firstAttribute="top" secondItem="gIp-Ho-8D9" secondAttribute="top" constant="20" symbolic="YES" id="MeT-hc-tH9"/>
-                    <constraint firstAttribute="trailing" secondItem="kAJ-WF-EhV" secondAttribute="trailing" constant="20" symbolic="YES" id="NfU-lD-Ma7"/>
-                    <constraint firstItem="rRp-Z8-Mx8" firstAttribute="leading" secondItem="gIp-Ho-8D9" secondAttribute="leading" constant="20" symbolic="YES" id="cdv-hz-3Al"/>
-                    <constraint firstItem="kAJ-WF-EhV" firstAttribute="top" secondItem="gIp-Ho-8D9" secondAttribute="top" constant="20" symbolic="YES" id="efL-55-bkL"/>
-                    <constraint firstItem="Ok7-VD-jYl" firstAttribute="top" secondItem="kAJ-WF-EhV" secondAttribute="bottom" constant="12" symbolic="YES" id="mxW-dB-abT"/>
-                    <constraint firstItem="kAJ-WF-EhV" firstAttribute="leading" secondItem="rRp-Z8-Mx8" secondAttribute="trailing" constant="8" symbolic="YES" id="s24-px-Iz9"/>
-                    <constraint firstItem="Ok7-VD-jYl" firstAttribute="width" secondItem="kAJ-WF-EhV" secondAttribute="width" id="smR-wa-7uO"/>
+                    <constraint firstAttribute="bottom" secondItem="rRp-Z8-Mx8" secondAttribute="bottom" constant="20" symbolic="YES" placeholder="YES" id="ARY-2f-dia"/>
+                    <constraint firstItem="Ok7-VD-jYl" firstAttribute="leading" secondItem="rRp-Z8-Mx8" secondAttribute="trailing" constant="8" symbolic="YES" placeholder="YES" id="BHy-AW-XMj"/>
+                    <constraint firstItem="rRp-Z8-Mx8" firstAttribute="top" secondItem="gIp-Ho-8D9" secondAttribute="top" constant="20" symbolic="YES" placeholder="YES" id="MeT-hc-tH9"/>
+                    <constraint firstAttribute="trailing" secondItem="kAJ-WF-EhV" secondAttribute="trailing" constant="20" symbolic="YES" placeholder="YES" id="NfU-lD-Ma7"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ok7-VD-jYl" secondAttribute="bottom" constant="20" symbolic="YES" placeholder="YES" id="ORX-TT-4WG"/>
+                    <constraint firstItem="rRp-Z8-Mx8" firstAttribute="leading" secondItem="gIp-Ho-8D9" secondAttribute="leading" constant="20" symbolic="YES" placeholder="YES" id="cdv-hz-3Al"/>
+                    <constraint firstItem="kAJ-WF-EhV" firstAttribute="top" secondItem="gIp-Ho-8D9" secondAttribute="top" constant="20" symbolic="YES" placeholder="YES" id="efL-55-bkL"/>
+                    <constraint firstItem="Ok7-VD-jYl" firstAttribute="top" secondItem="kAJ-WF-EhV" secondAttribute="bottom" constant="12" symbolic="YES" placeholder="YES" id="mxW-dB-abT"/>
+                    <constraint firstItem="kAJ-WF-EhV" firstAttribute="leading" secondItem="rRp-Z8-Mx8" secondAttribute="trailing" constant="8" symbolic="YES" placeholder="YES" id="s24-px-Iz9"/>
+                    <constraint firstItem="Ok7-VD-jYl" firstAttribute="width" secondItem="kAJ-WF-EhV" secondAttribute="width" placeholder="YES" id="smR-wa-7uO"/>
                 </constraints>
             </view>
             <connections>

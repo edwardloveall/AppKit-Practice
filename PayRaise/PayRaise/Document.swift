@@ -13,6 +13,9 @@ private var KVOContext = 0
 class Document: NSDocument, NSWindowDelegate {
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var arrayController: NSArrayController!
+  @IBOutlet weak var addEmployee: NSButton!
+  @IBOutlet weak var removeEmployee: NSButton!
+  @IBOutlet weak var view: NSView!
 
     var employees: [Employee] = [] {
         willSet {
@@ -34,8 +37,102 @@ class Document: NSDocument, NSWindowDelegate {
 
     override func windowControllerDidLoadNib(aController: NSWindowController) {
         super.windowControllerDidLoadNib(aController)
-        // Add any code here that needs to be executed once the windowController has loaded the document's window.
+        addAutoLayoutConstraints()
     }
+
+  func addAutoLayoutConstraints() {
+    guard let scrollView = tableView.enclosingScrollView else {
+      print("could not find table's scrollview")
+      return
+    }
+
+    scrollView.translatesAutoresizingMaskIntoConstraints = false
+
+    NSLayoutConstraint(item: addEmployee,
+                       attribute: .Top,
+                       relatedBy: .Equal,
+                       toItem: view,
+                       attribute: .Top,
+                       multiplier: 1,
+                       constant: 20).active = true
+    NSLayoutConstraint(item: addEmployee,
+                       attribute: .Leading,
+                       relatedBy: .Equal,
+                       toItem: scrollView,
+                       attribute: .Trailing,
+                       multiplier: 1,
+                       constant: 8).active = true
+    NSLayoutConstraint(item: removeEmployee,
+                       attribute: .Top,
+                       relatedBy: .Equal,
+                       toItem: addEmployee,
+                       attribute: .Bottom,
+                       multiplier: 1,
+                       constant: 8).active = true
+    NSLayoutConstraint(item: removeEmployee,
+                       attribute: .Leading,
+                       relatedBy: .Equal,
+                       toItem: scrollView,
+                       attribute: .Trailing,
+                       multiplier: 1,
+                       constant: 8).active = true
+    NSLayoutConstraint(item: removeEmployee,
+                       attribute: .Width,
+                       relatedBy: .Equal,
+                       toItem: addEmployee,
+                       attribute: .Width,
+                       multiplier: 1,
+                       constant: 0).active = true
+    NSLayoutConstraint(item: scrollView,
+                       attribute: .Top,
+                       relatedBy: .Equal,
+                       toItem: view,
+                       attribute: .Top,
+                       multiplier: 1,
+                       constant: 20).active = true
+    NSLayoutConstraint(item: scrollView,
+                       attribute: .Leading,
+                       relatedBy: .Equal,
+                       toItem: view,
+                       attribute: .Leading,
+                       multiplier: 1,
+                       constant: 20).active = true
+    NSLayoutConstraint(item: scrollView,
+                       attribute: .Width,
+                       relatedBy: .GreaterThanOrEqual,
+                       toItem: nil,
+                       attribute: .NotAnAttribute,
+                       multiplier: 1,
+                       constant: 200).active = true
+    NSLayoutConstraint(item: scrollView,
+                       attribute: .Height,
+                       relatedBy: .GreaterThanOrEqual,
+                       toItem: nil,
+                       attribute: .NotAnAttribute,
+                       multiplier: 1,
+                       constant: 100).active = true
+    NSLayoutConstraint(item: view,
+                       attribute: .Trailing,
+                       relatedBy: .Equal,
+                       toItem: addEmployee,
+                       attribute: .Trailing,
+                       multiplier: 1,
+                       constant: 20).active = true
+    NSLayoutConstraint(item: view,
+                       attribute: .Bottom,
+                       relatedBy: .Equal,
+                       toItem: scrollView,
+                       attribute: .Bottom,
+                       multiplier: 1,
+                       constant: 20).active = true
+    NSLayoutConstraint(item: view,
+                       attribute: .Bottom,
+                       relatedBy: .GreaterThanOrEqual,
+                       toItem: removeEmployee,
+                       attribute: .Bottom,
+                       multiplier: 1,
+                       constant: 20).active = true
+  }
 
     override class func autosavesInPlace() -> Bool {
         return true
