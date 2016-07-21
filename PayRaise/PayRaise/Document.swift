@@ -86,11 +86,29 @@ class Document: NSDocument, NSWindowDelegate {
             undo.prepareWithInvocationTarget(self).removeObjectFromEmployeesAtIndex(employees.count)
 
             if undo.undoing == false {
-                undo.setActionName("Add Person")
+                let actionName = NSLocalizedString("UNDO_ADD_EMPLOYEE",
+                                                   comment: "The menu title for reverting the Add Employee action")
+                undo.setActionName(actionName)
             }
         }
 
         employees.append(employee)
+    }
+
+    func removeObjectFromEmployeesAtIndex(index: Int) {
+        let employee = employees[index]
+
+        if let undo = undoManager {
+            undo.prepareWithInvocationTarget(self).insertObject(employee, inEmployeesAtIndex: index)
+
+            if undo.undoing == false {
+                let actionName = NSLocalizedString("UNDO_REMOVE_EMPLOYEE",
+                                                   comment: "The menu title for reverting the Remove Employee action")
+                undo.setActionName(actionName)
+            }
+        }
+
+        employees.removeAtIndex(index)
     }
 
     @IBAction func removeEmployees(sender: AnyObject) {
@@ -115,20 +133,6 @@ class Document: NSDocument, NSWindowDelegate {
             default: break
             }
         })
-    }
-
-    func removeObjectFromEmployeesAtIndex(index: Int) {
-        let employee = employees[index]
-
-        if let undo = undoManager {
-            undo.prepareWithInvocationTarget(self).insertObject(employee, inEmployeesAtIndex: index)
-
-            if undo.undoing == false {
-                undo.setActionName("Remove Person")
-            }
-        }
-
-        employees.removeAtIndex(index)
     }
 
     func removeRaiseForEmployees(employees: [Employee]) {
