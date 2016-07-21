@@ -13,19 +13,23 @@
 		394277BF1C85074500685A69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 394277BE1C85074500685A69 /* Assets.xcassets */; };
 		394277C21C85074500685A69 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 394277C01C85074500685A69 /* MainMenu.xib */; };
 		39683A671CA45E3A00E3AE3A /* file.icns in Resources */ = {isa = PBXBuildFile; fileRef = 39683A661CA45E3A00E3AE3A /* file.icns */; };
+		39ADE2AF1D414740000E82BD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 39ADE2AD1D414740000E82BD /* Localizable.strings */; };
 		39FD6C791C8746CF00BD5B8D /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FD6C781C8746CF00BD5B8D /* Employee.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		394277B41C85074500685A69 /* PayRaise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayRaise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		394277B71C85074500685A69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		394277B91C85074500685A69 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		394277B91C85074500685A69 /* Document.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; tabWidth = 4; };
 		394277BC1C85074500685A69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Document.xib; sourceTree = "<group>"; };
 		394277BE1C85074500685A69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		394277C11C85074500685A69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		394277C31C85074500685A69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39683A661CA45E3A00E3AE3A /* file.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = file.icns; sourceTree = "<group>"; };
 		39ADE2AC1D414005000E82BD /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Document.strings; sourceTree = "<group>"; };
+		39ADE2AE1D414740000E82BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		39ADE2B01D414768000E82BD /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		39ADE2B11D414769000E82BD /* fr */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		39FD6C781C8746CF00BD5B8D /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,6 +71,7 @@
 				394277C31C85074500685A69 /* Info.plist */,
 				39FD6C781C8746CF00BD5B8D /* Employee.swift */,
 				39683A661CA45E3A00E3AE3A /* file.icns */,
+				39ADE2AD1D414740000E82BD /* Localizable.strings */,
 			);
 			path = PayRaise;
 			sourceTree = "<group>";
@@ -113,6 +118,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 394277AB1C85074500685A69;
 			productRefGroup = 394277B51C85074500685A69 /* Products */;
@@ -129,6 +135,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39ADE2AF1D414740000E82BD /* Localizable.strings in Resources */,
 				39683A671CA45E3A00E3AE3A /* file.icns in Resources */,
 				394277BF1C85074500685A69 /* Assets.xcassets in Resources */,
 				394277BD1C85074500685A69 /* Document.xib in Resources */,
@@ -167,6 +174,16 @@
 				394277C11C85074500685A69 /* Base */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		39ADE2AD1D414740000E82BD /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				39ADE2AE1D414740000E82BD /* Base */,
+				39ADE2B01D414768000E82BD /* en */,
+				39ADE2B11D414769000E82BD /* fr */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
