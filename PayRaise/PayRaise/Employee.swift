@@ -9,7 +9,8 @@
 import Foundation
 
 class Employee: NSObject, NSCoding {
-    var name: String? = "New Employee"
+    var name: String? = NSLocalizedString("NEW_EMPLOYEE_NAME",
+                                          comment: "The name for a newly added employee before their name is set")
     var raise: Float = 0.05
 
     override init() {
