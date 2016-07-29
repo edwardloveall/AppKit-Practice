@@ -56,6 +56,14 @@ class EmployeesPrintingView: NSView {
                            y: 0,
                            width: 100.0,
                            height: lineHeight)
+    let pageNumRect = NSRect(x: pageRect.minX,
+                             y: pageRect.maxY - lineHeight,
+                             width: 200.0,
+                             height: lineHeight)
+
+    let pageNumString = NSString(string: "\(currentPage + 1)")
+    pageNumString.drawInRect(pageNumRect, withAttributes: textAttributes)
+
     for indexOnPage in 0..<linesPerPage {
       let indexInEmployees = currentPage * linesPerPage + indexOnPage
       if indexInEmployees >= employees.count {
