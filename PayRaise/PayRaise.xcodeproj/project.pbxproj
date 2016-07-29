@@ -14,6 +14,7 @@
 		394277C21C85074500685A69 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 394277C01C85074500685A69 /* MainMenu.xib */; };
 		39683A671CA45E3A00E3AE3A /* file.icns in Resources */ = {isa = PBXBuildFile; fileRef = 39683A661CA45E3A00E3AE3A /* file.icns */; };
 		39ADE2AF1D414740000E82BD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 39ADE2AD1D414740000E82BD /* Localizable.strings */; };
+		39F569B51D4B9D1F00016566 /* EmployeesPrintingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F569B41D4B9D1F00016566 /* EmployeesPrintingView.swift */; };
 		39FD6C791C8746CF00BD5B8D /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FD6C781C8746CF00BD5B8D /* Employee.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		39ADE2AE1D414740000E82BD /* Base */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		39ADE2B01D414768000E82BD /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		39ADE2B11D414769000E82BD /* fr */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		39F569B41D4B9D1F00016566 /* EmployeesPrintingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesPrintingView.swift; sourceTree = "<group>"; };
 		39FD6C781C8746CF00BD5B8D /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +67,7 @@
 			children = (
 				394277B71C85074500685A69 /* AppDelegate.swift */,
 				394277B91C85074500685A69 /* Document.swift */,
+				39F569B41D4B9D1F00016566 /* EmployeesPrintingView.swift */,
 				394277BB1C85074500685A69 /* Document.xib */,
 				394277BE1C85074500685A69 /* Assets.xcassets */,
 				394277C01C85074500685A69 /* MainMenu.xib */,
@@ -153,6 +156,7 @@
 				394277BA1C85074500685A69 /* Document.swift in Sources */,
 				39FD6C791C8746CF00BD5B8D /* Employee.swift in Sources */,
 				394277B81C85074500685A69 /* AppDelegate.swift in Sources */,
+				39F569B51D4B9D1F00016566 /* EmployeesPrintingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

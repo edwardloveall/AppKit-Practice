@@ -182,4 +182,12 @@ class Document: NSDocument, NSWindowDelegate {
     func windowWillClose(notification: NSNotification) {
         employees = []
     }
+
+    override func printOperationWithSettings(printSettings: [String : AnyObject]) throws -> NSPrintOperation {
+        let employeesPrintingView = EmployeesPrintingView(employees: employees)
+        let printInfo: NSPrintInfo = self.printInfo
+        let printOperation = NSPrintOperation(view: employeesPrintingView,
+                                              printInfo: printInfo)
+        return printOperation
+    }
 }
