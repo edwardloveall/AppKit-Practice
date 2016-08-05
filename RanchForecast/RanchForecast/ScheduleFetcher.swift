@@ -61,19 +61,29 @@ class ScheduleFetcher {
   }
 
   func courseFromDictionary(dict: NSDictionary) -> Course? {
-    if let title = dict["title"] as? String,
-       let urlString = dict["url"] as? String,
-       let upcomingArray = dict["upcoming"] as? [NSDictionary],
-       let nextUpcomingDict = upcomingArray.first,
-       let nextStartDateString = nextUpcomingDict["start_date"] as? String,
-       let url = NSURL(string: urlString) {
-      let dateFormatter = NSDateFormatter()
-      dateFormatter.dateFormat = "yyyy-mm-dd"
-      let nextStartDate = dateFormatter.dateFromString(nextStartDateString)!
+    let dateFormatter = NSDateFormatter()
+    dateFormatter.dateFormat = "yyyy-mm-dd"
 
-      return Course(title: title, url: url, nextStartDate: nextStartDate)
+    guard let title = dict["title"] as? String else {
+      print("could not get title")
+      return nil
     }
-    return nil
+
+    guard let urlString = dict["url"] as? String,
+          let url = NSURL(string: urlString) else {
+      print("could not parse URL")
+      return nil
+    }
+
+    guard let upcomingArray = dict["upcoming"] as? [NSDictionary],
+          let nextUpcomingDict = upcomingArray.first,
+          let nextStartDateString = nextUpcomingDict["start_date"] as? String,
+          let nextStartDate = dateFormatter.dateFromString(nextStartDateString) else {
+      print("could not parse startDate")
+      return nil
+    }
+
+    return Course(title: title, url: url, nextStartDate: nextStartDate)
   }
 
   func coursesFromData(data: NSData) throws -> [Course] {
