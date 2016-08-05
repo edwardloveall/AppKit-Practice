@@ -11,6 +11,7 @@ import Cocoa
 class MainWindowController: NSWindowController {
   @IBOutlet var tableView: NSTableView!
   @IBOutlet var arrayController: NSArrayController!
+  @IBOutlet var spinner: NSProgressIndicator!
 
   let fetcher = ScheduleFetcher()
   dynamic var courses: [Course] = []
@@ -24,6 +25,7 @@ class MainWindowController: NSWindowController {
 
     tableView.target = self
     tableView.doubleAction = #selector(MainWindowController.openClass(_:))
+    spinner.startAnimation(nil)
 
     fetcher.fetchCoursesUsingCompletionHandler { (result) in
       switch result {
@@ -33,6 +35,7 @@ class MainWindowController: NSWindowController {
         print("Got error: \(error)")
         self.courses = []
       }
+      self.spinner.stopAnimation(nil)
     }
   }
 

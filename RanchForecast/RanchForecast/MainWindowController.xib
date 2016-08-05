@@ -8,6 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="RanchForecast" customModuleProvider="target">
             <connections>
                 <outlet property="arrayController" destination="DIy-a0-4KT" id="v1O-D0-JQM"/>
+                <outlet property="spinner" destination="YWx-EK-L6W" id="RrO-9f-W5e"/>
                 <outlet property="tableView" destination="gdh-Ba-rzp" id="17O-28-P44"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
@@ -129,6 +130,9 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
                     </scrollView>
+                    <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="YWx-EK-L6W">
+                        <rect key="frame" x="232" y="252" width="16" height="16"/>
+                    </progressIndicator>
                 </subviews>
             </view>
             <connections>
