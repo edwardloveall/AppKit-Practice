@@ -61,19 +61,19 @@ class ScheduleFetcher {
   }
 
   func courseFromDictionary(dict: NSDictionary) -> Course? {
-    let title = dict["title"] as! String
-    let urlString = dict["url"] as! String
-    let upcomingArray = dict["upcoming"] as! [NSDictionary]
-    let nextUpcomingDict = upcomingArray.first!
-    let nextStartDateString = nextUpcomingDict["start_date"] as! String
+    if let title = dict["title"] as? String,
+       let urlString = dict["url"] as? String,
+       let upcomingArray = dict["upcoming"] as? [NSDictionary],
+       let nextUpcomingDict = upcomingArray.first,
+       let nextStartDateString = nextUpcomingDict["start_date"] as? String,
+       let url = NSURL(string: urlString) {
+      let dateFormatter = NSDateFormatter()
+      dateFormatter.dateFormat = "yyyy-mm-dd"
+      let nextStartDate = dateFormatter.dateFromString(nextStartDateString)!
 
-    let url = NSURL(string: urlString)!
-
-    let dateFormatter = NSDateFormatter()
-    dateFormatter.dateFormat = "yyyy-mm-dd"
-    let nextStartDate = dateFormatter.dateFromString(nextStartDateString)!
-
-    return Course(title: title, url: url, nextStartDate: nextStartDate)
+      return Course(title: title, url: url, nextStartDate: nextStartDate)
+    }
+    return nil
   }
 
   func coursesFromData(data: NSData) throws -> [Course] {
