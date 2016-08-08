@@ -62,7 +62,7 @@ class ScheduleFetcher {
 
   func courseFromDictionary(dict: NSDictionary) -> Course? {
     let dateFormatter = NSDateFormatter()
-    dateFormatter.dateFormat = "yyyy-mm-dd"
+    dateFormatter.dateFormat = "yyyy-MM-dd"
 
     guard let title = dict["title"] as? String else {
       print("could not get title")
