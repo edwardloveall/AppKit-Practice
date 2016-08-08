@@ -22,7 +22,7 @@ class ScheduleFetcher {
   }
 
   func fetchCoursesUsingCompletionHandler(completionHandler: (FetchCoursesResult) -> Void) {
-    guard let url = NSURL(string: "http://bookapi.bignerdranch.com/courses.json") else {
+    guard let url = NSURL(string: "http://bookapi.bignerdranch.com/courses.xml") else {
       print("URL could not be formed")
       exit(1)
     }
@@ -36,7 +36,9 @@ class ScheduleFetcher {
                 let data = data {
         print("\(data.length) bytes, HTTP \(response.statusCode)")
         if response.statusCode == 200 {
-          result = FetchCoursesResult { try self.coursesFromData(data) }
+          let parser = XMLParser(data: data)
+          let courseDicts = parser.parse()
+          result = FetchCoursesResult { self.coursesFromDictionaries(dicts: courseDicts) }
         } else {
           let error = self.errorWithCode(1, localizedDescription: "Bad status code \(response.statusCode)")
           result = .Failure(error)
@@ -62,22 +64,20 @@ class ScheduleFetcher {
 
   func courseFromDictionary(dict: NSDictionary) -> Course? {
     let dateFormatter = NSDateFormatter()
-    dateFormatter.dateFormat = "yyyy-mm-dd"
+    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm::ss Z"
 
-    guard let title = dict["title"] as? String else {
+    guard let title = dict["offering"] as? String else {
       print("could not get title")
       return nil
     }
 
-    guard let urlString = dict["url"] as? String,
+    guard let urlString = dict["href"] as? String,
           let url = NSURL(string: urlString) else {
       print("could not parse URL")
       return nil
     }
 
-    guard let upcomingArray = dict["upcoming"] as? [NSDictionary],
-          let nextUpcomingDict = upcomingArray.first,
-          let nextStartDateString = nextUpcomingDict["start_date"] as? String,
+    guard let nextStartDateString = dict["begin"] as? String,
           let nextStartDate = dateFormatter.dateFromString(nextStartDateString) else {
       print("could not parse startDate")
       return nil
@@ -86,9 +86,7 @@ class ScheduleFetcher {
     return Course(title: title, url: url, nextStartDate: nextStartDate)
   }
 
-  func coursesFromData(data: NSData) throws -> [Course] {
-    let topLevelDict = try NSJSONSerialization.JSONObjectWithData(data, options: []) as! NSDictionary
-    let courseDicts = topLevelDict["courses"] as! [NSDictionary]
+  func coursesFromDictionaries(dicts courseDicts: [Dictionary<String, String>]) -> [Course] {
     var courses: [Course] = []
     for courseDict in courseDicts {
       if let course = courseFromDictionary(courseDict) {

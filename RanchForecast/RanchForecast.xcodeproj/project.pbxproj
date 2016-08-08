@@ -14,6 +14,7 @@
 		399779781D522F3D006249C4 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 399779761D522F3D006249C4 /* MainWindowController.xib */; };
 		3997797A1D522FD4006249C4 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399779791D522FD4006249C4 /* Course.swift */; };
 		3997797C1D5234C5006249C4 /* ScheduleFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3997797B1D5234C5006249C4 /* ScheduleFetcher.swift */; };
+		399AF44F1D55138E00E54DBB /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399AF44E1D55138E00E54DBB /* XMLParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		399779761D522F3D006249C4 /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
 		399779791D522FD4006249C4 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		3997797B1D5234C5006249C4 /* ScheduleFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleFetcher.swift; sourceTree = "<group>"; };
+		399AF44E1D55138E00E54DBB /* XMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				399779761D522F3D006249C4 /* MainWindowController.xib */,
 				399779791D522FD4006249C4 /* Course.swift */,
 				3997797B1D5234C5006249C4 /* ScheduleFetcher.swift */,
+				399AF44E1D55138E00E54DBB /* XMLParser.swift */,
 				3997796A1D522EFE006249C4 /* Assets.xcassets */,
 				3997796C1D522EFE006249C4 /* MainMenu.xib */,
 				3997796F1D522EFE006249C4 /* Info.plist */,
@@ -145,6 +148,7 @@
 				399779771D522F3D006249C4 /* MainWindowController.swift in Sources */,
 				3997797C1D5234C5006249C4 /* ScheduleFetcher.swift in Sources */,
 				399779691D522EFE006249C4 /* AppDelegate.swift in Sources */,
+				399AF44F1D55138E00E54DBB /* XMLParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +291,7 @@
 				399779741D522EFE006249C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
