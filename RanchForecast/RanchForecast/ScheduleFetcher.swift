@@ -28,7 +28,7 @@ class ScheduleFetcher {
     }
     let request = NSURLRequest(URL: url)
     let task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
-      var result: FetchCoursesResult = self.resultFromData(data, response: response, error: error)
+      let result: FetchCoursesResult = self.resultFromData(data, response: response, error: error)
 
       NSOperationQueue.mainQueue().addOperationWithBlock({
         completionHandler(result)
