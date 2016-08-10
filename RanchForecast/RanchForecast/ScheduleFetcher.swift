@@ -28,23 +28,7 @@ class ScheduleFetcher {
     }
     let request = NSURLRequest(URL: url)
     let task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
-      var result: FetchCoursesResult
-
-      if data == nil, let error = error {
-        result = .Failure(error)
-      } else if let response = response as? NSHTTPURLResponse,
-                let data = data {
-        print("\(data.length) bytes, HTTP \(response.statusCode)")
-        if response.statusCode == 200 {
-          result = FetchCoursesResult { try self.coursesFromData(data) }
-        } else {
-          let error = self.errorWithCode(1, localizedDescription: "Bad status code \(response.statusCode)")
-          result = .Failure(error)
-        }
-      } else {
-        let error = self.errorWithCode(1, localizedDescription: "Unexpected response object")
-        result = .Failure(error)
-      }
+      var result: FetchCoursesResult = self.resultFromData(data, response: response, error: error)
 
       NSOperationQueue.mainQueue().addOperationWithBlock({
         completionHandler(result)
@@ -52,6 +36,28 @@ class ScheduleFetcher {
     })
 
     task.resume()
+  }
+
+  func resultFromData(data: NSData?, response: NSURLResponse?, error: NSError?) -> FetchCoursesResult {
+    var result: FetchCoursesResult
+
+    if data == nil, let error = error {
+      result = .Failure(error)
+    } else if let response = response as? NSHTTPURLResponse,
+      let data = data {
+      print("\(data.length) bytes, HTTP \(response.statusCode)")
+      if response.statusCode == 200 {
+        result = FetchCoursesResult { try self.coursesFromData(data) }
+      } else {
+        let error = self.errorWithCode(1, localizedDescription: "Bad status code \(response.statusCode)")
+        result = .Failure(error)
+      }
+    } else {
+      let error = self.errorWithCode(1, localizedDescription: "Unexpected response object")
+      result = .Failure(error)
+    }
+
+    return result
   }
 
   func errorWithCode(code: Int, localizedDescription: String) -> NSError {
