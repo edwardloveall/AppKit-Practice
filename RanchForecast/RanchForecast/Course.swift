@@ -12,3 +12,9 @@ class Course: NSObject {
     super.init()
   }
 }
+
+func ==(lhs: Course, rhs: Course) -> Bool {
+  return lhs.title == rhs.title &&
+         lhs.url == rhs.url &&
+         lhs.nextStartDate == rhs.nextStartDate
+}

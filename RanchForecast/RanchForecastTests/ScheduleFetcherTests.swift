@@ -3,6 +3,9 @@ import XCTest
 
 class ScheduleFetcherTests: XCTestCase {
   var fetcher: ScheduleFetcher!
+  let expectedCourse = Course(title: Constants.title,
+                              url: Constants.url,
+                              nextStartDate: Constants.date!)
 
   override func setUp() {
     super.setUp()
@@ -18,9 +21,7 @@ class ScheduleFetcherTests: XCTestCase {
     let course: Course! = fetcher.courseFromDictionary(Constants.validCourseDict)
 
     XCTAssertNotNil(course)
-    XCTAssertEqual(course.title, Constants.title)
-    XCTAssertEqual(course.url, Constants.url)
-    XCTAssertEqual(course.nextStartDate, Constants.date)
+    XCTAssert(course == expectedCourse)
   }
 
   func testResultFromValidHTTPResponseAndValidData() {
@@ -31,9 +32,7 @@ class ScheduleFetcherTests: XCTestCase {
     case .Success(let courses):
       XCTAssert(courses.count == 1)
       let course = courses[0]
-      XCTAssertEqual(course.title, Constants.title)
-      XCTAssertEqual(course.url, Constants.url)
-      XCTAssertEqual(course.nextStartDate, Constants.date)
+      XCTAssert(course == expectedCourse)
     default:
       XCTFail("Result contains Failure, but Sucess was expected.")
     }
