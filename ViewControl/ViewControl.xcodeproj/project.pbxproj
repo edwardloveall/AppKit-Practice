@@ -12,6 +12,8 @@
 		392B17661D639AFE00D92D91 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 392B17641D639AFE00D92D91 /* MainMenu.xib */; };
 		392B176F1D639B9700D92D91 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392B176D1D639B9700D92D91 /* ImageViewController.swift */; };
 		392B17701D639B9700D92D91 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 392B176E1D639B9700D92D91 /* ImageViewController.xib */; };
+		392B17731D63A42C00D92D91 /* SpeakLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392B17711D63A42C00D92D91 /* SpeakLineViewController.swift */; };
+		392B17741D63A42C00D92D91 /* SpeakLineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 392B17721D63A42C00D92D91 /* SpeakLineViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		392B17671D639AFE00D92D91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		392B176D1D639B9700D92D91 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		392B176E1D639B9700D92D91 /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
+		392B17711D63A42C00D92D91 /* SpeakLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakLineViewController.swift; sourceTree = "<group>"; };
+		392B17721D63A42C00D92D91 /* SpeakLineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeakLineViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				392B17641D639AFE00D92D91 /* MainMenu.xib */,
 				392B176D1D639B9700D92D91 /* ImageViewController.swift */,
 				392B176E1D639B9700D92D91 /* ImageViewController.xib */,
+				392B17711D63A42C00D92D91 /* SpeakLineViewController.swift */,
+				392B17721D63A42C00D92D91 /* SpeakLineViewController.xib */,
 				392B17671D639AFE00D92D91 /* Info.plist */,
 			);
 			path = ViewControl;
@@ -125,6 +131,7 @@
 				392B17631D639AFD00D92D91 /* Assets.xcassets in Resources */,
 				392B17701D639B9700D92D91 /* ImageViewController.xib in Resources */,
 				392B17661D639AFE00D92D91 /* MainMenu.xib in Resources */,
+				392B17741D63A42C00D92D91 /* SpeakLineViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				392B17731D63A42C00D92D91 /* SpeakLineViewController.swift in Sources */,
 				392B176F1D639B9700D92D91 /* ImageViewController.swift in Sources */,
 				392B17611D639AFD00D92D91 /* AppDelegate.swift in Sources */,
 			);

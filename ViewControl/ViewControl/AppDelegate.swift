@@ -22,19 +22,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     columnViewController.title = "Column"
     columnViewController.image = NSImage(named: NSImageNameColumnViewTemplate)
 
+    let speakLine = SpeakLineViewController()
+    speakLine.title = "Speach"
+
     let tabViewController = NSTabViewController()
     tabViewController.addChildViewController(flowViewController)
     tabViewController.addChildViewController(columnViewController)
+    tabViewController.addChildViewController(speakLine)
 
     let window = NSWindow(contentViewController: tabViewController)
     window.makeKeyAndOrderFront(self)
     self.window = window
   }
-
-  func applicationWillTerminate(aNotification: NSNotification) {
-    // Insert code here to tear down your application
-  }
-
-
 }
-
