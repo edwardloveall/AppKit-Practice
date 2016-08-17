@@ -31,6 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     tabViewController.addChildViewController(speakLine)
 
     let window = NSWindow(contentViewController: tabViewController)
+    window.contentView = tabViewController.view
     window.makeKeyAndOrderFront(self)
     self.window = window
   }
