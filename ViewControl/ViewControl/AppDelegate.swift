@@ -30,9 +30,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     tabViewController.addChildViewController(columnViewController)
     tabViewController.addChildViewController(speakLine)
 
-    let window = NSWindow(contentViewController: tabViewController)
-    window.contentView = tabViewController.view
-    window.makeKeyAndOrderFront(self)
-    self.window = window
+    let mainWindowController = MainWindowController(tabViewController: tabViewController)
+    self.window = mainWindowController.window
   }
 }
