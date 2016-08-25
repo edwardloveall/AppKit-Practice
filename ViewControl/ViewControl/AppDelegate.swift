@@ -23,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     columnViewController.image = NSImage(named: NSImageNameColumnViewTemplate)
 
     let speakLine = SpeakLineViewController()
-    speakLine.title = "Speach"
+    speakLine.title = "Speech"
 
     let tabViewController = NerdTabViewController()
     tabViewController.addChildViewController(flowViewController)

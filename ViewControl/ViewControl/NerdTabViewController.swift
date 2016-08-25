@@ -1,5 +1,10 @@
 import Cocoa
 
+@objc
+protocol ImageRepresentable {
+  var image: NSImage? { get }
+}
+
 class NerdTabViewController: NSViewController {
   var box = NSBox()
   var buttons = [NSButton]()
@@ -43,8 +48,12 @@ class NerdTabViewController: NSViewController {
       button.target = self
       button.action = #selector(NerdTabViewController.selectTab(_:))
       button.tag = index
-      button.image = NSImage(named: NSImageNameFlowViewTemplate)
-      button.widthAnchor.constraintEqualToConstant(buttonWidth).active = true
+      if let viewController = viewController as? ImageRepresentable {
+        button.image = viewController.image
+      } else {
+        button.title = viewController.title ?? "View Controller"
+      }
+      button.widthAnchor.constraintGreaterThanOrEqualToConstant(buttonWidth).active = true
       button.heightAnchor.constraintEqualToConstant(buttonHeight).active = true
       return button
     }
