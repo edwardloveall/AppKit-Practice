@@ -9,9 +9,9 @@
 import Cocoa
 
 class MainWindowController: NSWindowController {
-  let tabViewController: NSTabViewController
+  let tabViewController: NerdTabViewController
 
-  init(tabViewController: NSTabViewController) {
+  init(tabViewController: NerdTabViewController) {
     self.tabViewController = tabViewController
     super.init(window: NSWindow())
     window?.contentViewController = tabViewController

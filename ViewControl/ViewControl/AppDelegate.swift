@@ -25,7 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let speakLine = SpeakLineViewController()
     speakLine.title = "Speach"
 
-    let tabViewController = NSTabViewController()
+    let tabViewController = NerdTabViewController()
     tabViewController.addChildViewController(flowViewController)
     tabViewController.addChildViewController(columnViewController)
     tabViewController.addChildViewController(speakLine)
