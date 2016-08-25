@@ -66,23 +66,21 @@ class NerdTabViewController: NSViewController {
     separator.translatesAutoresizingMaskIntoConstraints = false
 
     view.subviews = [stackView, separator, box]
-    let views = ["stack": stackView, "separator": separator, "box": box]
-    let metrics = ["buttonHeight": buttonHeight]
 
-    func addVisualFormatConstraints(visualFormat: String) {
-      let constraints = NSLayoutConstraint.constraintsWithVisualFormat(
-        visualFormat,
-        options: [],
-        metrics: metrics,
-        views: views
-      )
-      NSLayoutConstraint.activateConstraints(constraints)
-    }
-
-    addVisualFormatConstraints("H:|[stack]|")
-    addVisualFormatConstraints("H:|[separator]|")
-    addVisualFormatConstraints("H:|[box(>=100)]|")
-    addVisualFormatConstraints("V:|[stack(buttonHeight)][separator(==1)][box(>=100)]|")
+    stackView.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor).active = true
+    stackView.trailingAnchor.constraintEqualToAnchor(view.trailingAnchor).active = true
+    stackView.topAnchor.constraintEqualToAnchor(view.topAnchor).active = true
+    stackView.bottomAnchor.constraintEqualToAnchor(separator.topAnchor).active = true
+    stackView.heightAnchor.constraintEqualToConstant(buttonHeight).active = true
+    separator.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor).active = true
+    separator.trailingAnchor.constraintEqualToAnchor(view.trailingAnchor).active = true
+    separator.bottomAnchor.constraintEqualToAnchor(box.topAnchor).active = true
+    separator.heightAnchor.constraintEqualToConstant(1).active = true
+    box.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor).active = true
+    box.trailingAnchor.constraintEqualToAnchor(view.trailingAnchor).active = true
+    box.widthAnchor.constraintGreaterThanOrEqualToConstant(100).active = true
+    box.heightAnchor.constraintGreaterThanOrEqualToConstant(100).active = true
+    box.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor).active = true
 
     if childViewControllers.count > 0 {
       selectTabAtIndex(0)
