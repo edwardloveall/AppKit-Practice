@@ -6,7 +6,7 @@ protocol ImageRepresentable {
 }
 
 class NerdTabViewController: NSViewController {
-  var box = NSBox()
+  var container = NSView()
   var buttons = [NSButton]()
 
   func selectTabAtIndex(index: Int) {
@@ -19,9 +19,15 @@ class NerdTabViewController: NSViewController {
       } else {
         button.state = NSOffState
       }
-      let viewController = childViewControllers[index]
-      box.contentView = viewController.view
     }
+    let imageView = childViewControllers[index].view
+    container.subviews = []
+    container.addSubview(imageView)
+    imageView.translatesAutoresizingMaskIntoConstraints = false
+    imageView.topAnchor.constraintEqualToAnchor(container.topAnchor).active = true
+    imageView.bottomAnchor.constraintEqualToAnchor(container.bottomAnchor).active = true
+    imageView.leadingAnchor.constraintEqualToAnchor(container.leadingAnchor).active = true
+    imageView.trailingAnchor.constraintEqualToAnchor(container.trailingAnchor).active = true
   }
 
   func selectTab(sender: NSButton) {
@@ -66,15 +72,13 @@ class NerdTabViewController: NSViewController {
       stackView.addView(button, inGravity: .Center)
     }
 
-    box.translatesAutoresizingMaskIntoConstraints = false
-    box.borderType = .NoBorder
-    box.boxType = .Custom
+    container.translatesAutoresizingMaskIntoConstraints = false
 
     let separator = NSBox()
     separator.boxType = .Separator
     separator.translatesAutoresizingMaskIntoConstraints = false
 
-    view.subviews = [stackView, separator, box]
+    view.subviews = [stackView, separator, container]
 
     stackView.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor).active = true
     stackView.trailingAnchor.constraintEqualToAnchor(view.trailingAnchor).active = true
@@ -83,13 +87,13 @@ class NerdTabViewController: NSViewController {
     stackView.heightAnchor.constraintEqualToConstant(buttonHeight).active = true
     separator.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor).active = true
     separator.trailingAnchor.constraintEqualToAnchor(view.trailingAnchor).active = true
-    separator.bottomAnchor.constraintEqualToAnchor(box.topAnchor).active = true
+    separator.bottomAnchor.constraintEqualToAnchor(container.topAnchor).active = true
     separator.heightAnchor.constraintEqualToConstant(1).active = true
-    box.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor).active = true
-    box.trailingAnchor.constraintEqualToAnchor(view.trailingAnchor).active = true
-    box.widthAnchor.constraintGreaterThanOrEqualToConstant(100).active = true
-    box.heightAnchor.constraintGreaterThanOrEqualToConstant(100).active = true
-    box.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor).active = true
+    container.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor).active = true
+    container.trailingAnchor.constraintEqualToAnchor(view.trailingAnchor).active = true
+    container.widthAnchor.constraintGreaterThanOrEqualToConstant(100).active = true
+    container.heightAnchor.constraintGreaterThanOrEqualToConstant(100).active = true
+    container.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor).active = true
 
     if childViewControllers.count > 0 {
       selectTabAtIndex(0)
