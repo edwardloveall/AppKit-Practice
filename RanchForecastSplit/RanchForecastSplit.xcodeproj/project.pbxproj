@@ -1,0 +1,290 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3932F6621D760D4600AC9712 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932F6611D760D4600AC9712 /* AppDelegate.swift */; };
+		3932F6661D760D4600AC9712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3932F6651D760D4600AC9712 /* Assets.xcassets */; };
+		3932F6691D760D4600AC9712 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3932F6671D760D4600AC9712 /* Main.storyboard */; };
+		3932F6721D76116100AC9712 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932F6701D76116100AC9712 /* Course.swift */; };
+		3932F6731D76116100AC9712 /* ScheduleFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932F6711D76116100AC9712 /* ScheduleFetcher.swift */; };
+		3932F6751D7611B500AC9712 /* CourseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932F6741D7611B500AC9712 /* CourseListViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3932F65E1D760D4600AC9712 /* RanchForecastSplit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RanchForecastSplit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3932F6611D760D4600AC9712 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3932F6651D760D4600AC9712 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3932F6681D760D4600AC9712 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3932F66A1D760D4600AC9712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3932F6701D76116100AC9712 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		3932F6711D76116100AC9712 /* ScheduleFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleFetcher.swift; sourceTree = "<group>"; };
+		3932F6741D7611B500AC9712 /* CourseListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseListViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3932F65B1D760D4600AC9712 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3932F6551D760D4600AC9712 = {
+			isa = PBXGroup;
+			children = (
+				3932F6601D760D4600AC9712 /* RanchForecastSplit */,
+				3932F65F1D760D4600AC9712 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3932F65F1D760D4600AC9712 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3932F65E1D760D4600AC9712 /* RanchForecastSplit.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3932F6601D760D4600AC9712 /* RanchForecastSplit */ = {
+			isa = PBXGroup;
+			children = (
+				3932F6611D760D4600AC9712 /* AppDelegate.swift */,
+				3932F6651D760D4600AC9712 /* Assets.xcassets */,
+				3932F6671D760D4600AC9712 /* Main.storyboard */,
+				3932F6701D76116100AC9712 /* Course.swift */,
+				3932F6711D76116100AC9712 /* ScheduleFetcher.swift */,
+				3932F6741D7611B500AC9712 /* CourseListViewController.swift */,
+				3932F66A1D760D4600AC9712 /* Info.plist */,
+			);
+			path = RanchForecastSplit;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3932F65D1D760D4600AC9712 /* RanchForecastSplit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3932F66D1D760D4600AC9712 /* Build configuration list for PBXNativeTarget "RanchForecastSplit" */;
+			buildPhases = (
+				3932F65A1D760D4600AC9712 /* Sources */,
+				3932F65B1D760D4600AC9712 /* Frameworks */,
+				3932F65C1D760D4600AC9712 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RanchForecastSplit;
+			productName = RanchForecastSplit;
+			productReference = 3932F65E1D760D4600AC9712 /* RanchForecastSplit.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3932F6561D760D4600AC9712 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Edward Loveall";
+				TargetAttributes = {
+					3932F65D1D760D4600AC9712 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 3932F6591D760D4600AC9712 /* Build configuration list for PBXProject "RanchForecastSplit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3932F6551D760D4600AC9712;
+			productRefGroup = 3932F65F1D760D4600AC9712 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3932F65D1D760D4600AC9712 /* RanchForecastSplit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3932F65C1D760D4600AC9712 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3932F6661D760D4600AC9712 /* Assets.xcassets in Resources */,
+				3932F6691D760D4600AC9712 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3932F65A1D760D4600AC9712 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3932F6721D76116100AC9712 /* Course.swift in Sources */,
+				3932F6751D7611B500AC9712 /* CourseListViewController.swift in Sources */,
+				3932F6621D760D4600AC9712 /* AppDelegate.swift in Sources */,
+				3932F6731D76116100AC9712 /* ScheduleFetcher.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3932F6671D760D4600AC9712 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3932F6681D760D4600AC9712 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3932F66B1D760D4600AC9712 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3932F66C1D760D4600AC9712 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		3932F66E1D760D4600AC9712 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = RanchForecastSplit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.edwardloveall.RanchForecastSplit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3932F66F1D760D4600AC9712 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = RanchForecastSplit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.edwardloveall.RanchForecastSplit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3932F6591D760D4600AC9712 /* Build configuration list for PBXProject "RanchForecastSplit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3932F66B1D760D4600AC9712 /* Debug */,
+				3932F66C1D760D4600AC9712 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3932F66D1D760D4600AC9712 /* Build configuration list for PBXNativeTarget "RanchForecastSplit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3932F66E1D760D4600AC9712 /* Debug */,
+				3932F66F1D760D4600AC9712 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3932F6561D760D4600AC9712 /* Project object */;
+}
