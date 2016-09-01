@@ -13,6 +13,8 @@
 		3932F6721D76116100AC9712 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932F6701D76116100AC9712 /* Course.swift */; };
 		3932F6731D76116100AC9712 /* ScheduleFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932F6711D76116100AC9712 /* ScheduleFetcher.swift */; };
 		3932F6751D7611B500AC9712 /* CourseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932F6741D7611B500AC9712 /* CourseListViewController.swift */; };
+		3932F6771D76218B00AC9712 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932F6761D76218B00AC9712 /* WebViewController.swift */; };
+		3932F6791D76265500AC9712 /* MainSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932F6781D76265500AC9712 /* MainSplitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		3932F6701D76116100AC9712 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		3932F6711D76116100AC9712 /* ScheduleFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleFetcher.swift; sourceTree = "<group>"; };
 		3932F6741D7611B500AC9712 /* CourseListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseListViewController.swift; sourceTree = "<group>"; };
+		3932F6761D76218B00AC9712 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		3932F6781D76265500AC9712 /* MainSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainSplitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,9 +63,11 @@
 				3932F6611D760D4600AC9712 /* AppDelegate.swift */,
 				3932F6651D760D4600AC9712 /* Assets.xcassets */,
 				3932F6671D760D4600AC9712 /* Main.storyboard */,
+				3932F6781D76265500AC9712 /* MainSplitViewController.swift */,
 				3932F6701D76116100AC9712 /* Course.swift */,
 				3932F6711D76116100AC9712 /* ScheduleFetcher.swift */,
 				3932F6741D7611B500AC9712 /* CourseListViewController.swift */,
+				3932F6761D76218B00AC9712 /* WebViewController.swift */,
 				3932F66A1D760D4600AC9712 /* Info.plist */,
 			);
 			path = RanchForecastSplit;
@@ -139,7 +145,9 @@
 			files = (
 				3932F6721D76116100AC9712 /* Course.swift in Sources */,
 				3932F6751D7611B500AC9712 /* CourseListViewController.swift in Sources */,
+				3932F6791D76265500AC9712 /* MainSplitViewController.swift in Sources */,
 				3932F6621D760D4600AC9712 /* AppDelegate.swift in Sources */,
+				3932F6771D76218B00AC9712 /* WebViewController.swift in Sources */,
 				3932F6731D76116100AC9712 /* ScheduleFetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

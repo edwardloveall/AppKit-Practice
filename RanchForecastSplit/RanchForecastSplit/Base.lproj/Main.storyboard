@@ -665,10 +665,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--Split View Controller-->
+        <!--Main Split View Controller-->
         <scene sceneID="3TX-Y6-Qjr">
             <objects>
-                <splitViewController id="Mgh-nN-UqD" sceneMemberID="viewController">
+                <splitViewController id="Mgh-nN-UqD" customClass="MainSplitViewController" customModule="RanchForecastSplit" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
                         <splitViewItem id="x7F-aZ-g74"/>
                         <splitViewItem id="1GZ-b3-oir"/>
@@ -697,7 +697,7 @@
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTp-Bd-kXb">
                                 <rect key="frame" x="0.0" y="0.0" width="200" height="300"/>
                                 <clipView key="contentView" id="alt-QB-Nph">
-                                    <rect key="frame" x="1" y="23" width="198" height="276"/>
+                                    <rect key="frame" x="1" y="0.0" width="198" height="299"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="Khh-bn-XDZ" viewBased="YES" id="3e1-aB-HoD">
@@ -780,6 +780,7 @@
                                                 </tableColumn>
                                             </tableColumns>
                                             <connections>
+                                                <action selector="selectCourse:" target="r3f-cj-2Ih" id="DVs-qj-oQu"/>
                                                 <binding destination="k0V-Wl-USz" name="content" keyPath="arrangedObjects" id="XyP-rO-OHw"/>
                                                 <binding destination="k0V-Wl-USz" name="selectionIndexes" keyPath="selectionIndexes" previousBinding="XyP-rO-OHw" id="Ltt-Vl-aqR"/>
                                             </connections>
@@ -794,7 +795,7 @@
                                     <rect key="frame" x="1" y="283" width="198" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="NvE-Pr-Y6b">
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="NvE-Pr-Y6b">
                                     <rect key="frame" x="224" y="17" width="15" height="102"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -824,10 +825,10 @@
             </objects>
             <point key="canvasLocation" x="540" y="520"/>
         </scene>
-        <!--View Controller-->
+        <!--Web View Controller-->
         <scene sceneID="b0W-50-Ze8">
             <objects>
-                <viewController id="Luh-af-xQF" sceneMemberID="viewController">
+                <viewController id="Luh-af-xQF" customClass="WebViewController" customModule="RanchForecastSplit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="jf3-Ay-SwN">
                         <rect key="frame" x="0.0" y="0.0" width="440" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
