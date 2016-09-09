@@ -11,6 +11,7 @@
 		390E62371D81EA4200336469 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390E62361D81EA4200336469 /* ViewController.swift */; };
 		390E62391D81EA4200336469 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 390E62381D81EA4200336469 /* Assets.xcassets */; };
 		390E623C1D81EA4200336469 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 390E623A1D81EA4200336469 /* Main.storyboard */; };
+		39B3D4B41D82F86500663715 /* PictureLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B3D4B31D82F86500663715 /* PictureLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		390E62381D81EA4200336469 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		390E623B1D81EA4200336469 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		390E623D1D81EA4200336469 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39B3D4B31D82F86500663715 /* PictureLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				390E62341D81EA4200336469 /* AppDelegate.swift */,
 				390E62361D81EA4200336469 /* ViewController.swift */,
+				39B3D4B31D82F86500663715 /* PictureLoader.swift */,
 				390E62381D81EA4200336469 /* Assets.xcassets */,
 				390E623A1D81EA4200336469 /* Main.storyboard */,
 				390E623D1D81EA4200336469 /* Info.plist */,
@@ -133,6 +136,7 @@
 			files = (
 				390E62371D81EA4200336469 /* ViewController.swift in Sources */,
 				390E62351D81EA4200336469 /* AppDelegate.swift in Sources */,
+				39B3D4B41D82F86500663715 /* PictureLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +279,7 @@
 				390E62421D81EA4200336469 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

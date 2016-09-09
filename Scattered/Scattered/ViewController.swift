@@ -20,36 +20,17 @@ class ViewController: NSViewController {
 
   func addImagesFromFolderURL(folderURL: NSURL) {
     let t0 = NSDate.timeIntervalSinceReferenceDate()
-    let fileManager = NSFileManager()
-    let directoryEnumerator = fileManager.enumeratorAtURL(folderURL,
-                                                          includingPropertiesForKeys: .None,
-                                                          options: [],
-                                                          errorHandler: nil)
-    var allowedFiles = 10
-    while let url = directoryEnumerator?.nextObject() as? NSURL {
-      var isDirectoryValue: AnyObject?
-      do {
-        try url.getResourceValue(&isDirectoryValue, forKey: NSURLIsDirectoryKey)
-      } catch {
-        print("error checking whether URL is directory")
-        continue
-      }
-      if let _ = isDirectoryValue as? NSNumber
-         where isDirectoryValue?.boolValue == false {
-        let image = NSImage(contentsOfURL: url)
-        if let image = image {
-          allowedFiles -= 1
-          if allowedFiles < 0 {
-            break
-          }
-          let thumbImage = thumbImageFromImage(image)
-          presentImage(thumbImage)
-          let t1 = NSDate.timeIntervalSinceReferenceDate()
-          let interval = t1 - t0
-          text = String(format: "%0.1fs", interval)
-        }
+    let loader = PictureLoader(folderURL: folderURL, fileLimit: 10)
+    for url in loader.fileURLs {
+      if let image = NSImage(contentsOfURL: url) {
+        let thumbImage = thumbImageFromImage(image)
+        presentImage(thumbImage)
       }
     }
+
+    let t1 = NSDate.timeIntervalSinceReferenceDate()
+    let interval = t1 - t0
+    text = String(format: "%0.1fs", interval)
   }
 
   func presentImage(image: NSImage) {
