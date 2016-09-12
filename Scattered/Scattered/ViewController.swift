@@ -17,20 +17,28 @@ class ViewController: NSViewController {
       textLayer.string = text
     }
   }
+  let processingQueue: NSOperationQueue = {
+    let result = NSOperationQueue()
+    result.maxConcurrentOperationCount = 4
+    return result
+  }()
 
   func addImagesFromFolderURL(folderURL: NSURL) {
-    let t0 = NSDate.timeIntervalSinceReferenceDate()
-    let loader = PictureLoader(folderURL: folderURL, fileLimit: 10)
-    for url in loader.fileURLs {
-      if let image = NSImage(contentsOfURL: url) {
-        let thumbImage = thumbImageFromImage(image)
-        presentImage(thumbImage)
+    processingQueue.addOperationWithBlock {
+      let t0 = NSDate.timeIntervalSinceReferenceDate()
+      let loader = PictureLoader(folderURL: folderURL)
+      for url in loader.fileURLs {
+        if let image = NSImage(contentsOfURL: url) {
+          let thumbImage = self.thumbImageFromImage(image)
+          NSOperationQueue.mainQueue().addOperationWithBlock {
+            self.presentImage(thumbImage)
+            let t1 = NSDate.timeIntervalSinceReferenceDate()
+            let interval = t1 - t0
+            self.text = String(format: "%0.1fs", interval)
+          }
+        }
       }
     }
-
-    let t1 = NSDate.timeIntervalSinceReferenceDate()
-    let interval = t1 - t0
-    text = String(format: "%0.1fs", interval)
   }
 
   func presentImage(image: NSImage) {

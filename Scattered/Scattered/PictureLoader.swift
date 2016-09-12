@@ -3,10 +3,8 @@ import Cocoa
 class PictureLoader {
   let enumerator: NSDirectoryEnumerator?
   var fileURLs = [NSURL]()
-  let fileLimit: Int
 
-  init(folderURL: NSURL, fileLimit: Int) {
-    self.fileLimit = fileLimit
+  init(folderURL: NSURL) {
     let fileManager = NSFileManager()
     self.enumerator = fileManager.enumeratorAtURL(folderURL,
                                                   includingPropertiesForKeys: .None,
@@ -37,7 +35,5 @@ class PictureLoader {
         fileURLs.append(url)
       }
     }
-
-    fileURLs = Array(fileURLs[0..<fileLimit])
   }
 }
