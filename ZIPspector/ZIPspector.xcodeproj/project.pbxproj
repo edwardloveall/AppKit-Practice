@@ -298,6 +298,7 @@
 				390F40F11D902F50009E31DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,12 +1,10 @@
-//
-//  Document.swift
-//  ZIPspector
-//
-//  Created by Edward Loveall on 9/19/16.
-//  Copyright © 2016 Edward Loveall. All rights reserved.
-//
-
 import Cocoa
+
+enum ArchiveUTI: String {
+  case zip = "public.zip-archive"
+  case tar = "public.tar-archive"
+  case tgz = "org.gnu.gnu-zip-tar-archive"
+}
 
 class Document: NSDocument, NSTableViewDataSource {
   @IBOutlet weak var tableView: NSTableView!
@@ -34,10 +32,23 @@ class Document: NSDocument, NSTableViewDataSource {
 
   override func read(from url: URL, ofType typeName: String) throws {
     let filename = url.path
-    let process = Process()
     let outPipe = Pipe()
-    process.launchPath = "/usr/bin/zipinfo"
-    process.arguments = ["-l", filename]
+    guard let utiType = ArchiveUTI(rawValue: typeName) else {
+      Swift.print("Cannot open this file with \(typeName) UTI!")
+      return
+    }
+    let process: Process = {
+      switch utiType {
+      case .zip:
+        return configureZip()
+      case .tar:
+        return configureTar()
+      case .tgz:
+        return configureTgz()
+      }
+    }()
+
+    process.arguments?.append(filename)
     process.standardOutput = outPipe
 
     process.launch()
@@ -56,5 +67,26 @@ class Document: NSDocument, NSTableViewDataSource {
 
     Swift.print(filenames)
     tableView?.reloadData()
+  }
+
+  func configureZip() -> Process {
+    let process = Process()
+    process.launchPath = "/usr/bin/zipinfo"
+    process.arguments = ["-l"]
+    return process
+  }
+
+  func configureTar() -> Process {
+    let process = Process()
+    process.launchPath = "/usr/bin/tar"
+    process.arguments = ["tf"]
+    return process
+  }
+
+  func configureTgz() -> Process {
+    let process = Process()
+    process.launchPath = "/usr/bin/tar"
+    process.arguments = ["tzf"]
+    return process
   }
 }
