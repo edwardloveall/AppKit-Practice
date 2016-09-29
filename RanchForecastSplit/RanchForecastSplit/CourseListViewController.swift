@@ -16,7 +16,11 @@ class CourseListViewController: NSViewController {
     fetcher.fetchCoursesUsingCompletionHandler { (result) in
       switch result {
       case .Success(let courses):
-        print("Got courses: \(courses)")
+        #if DEBUG
+          print("Got courses: \(courses)")
+        #else
+          print("Got courses")
+        #endif
         self.courses = courses
       case .Failure(let error):
         print("Got error: \(error)")
