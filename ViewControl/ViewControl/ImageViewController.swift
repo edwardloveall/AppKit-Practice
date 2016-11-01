@@ -14,16 +14,16 @@ class ImageViewController: NSViewController, ImageRepresentable {
 
     view = NSView(frame: initialFrame)
     imageView.image = image
-    imageView.imageScaling = .ScaleProportionallyUpOrDown
+    imageView.imageScaling = .scaleProportionallyUpOrDown
 
     view.addSubview(imageView)
   }
 
   func setupConstraints() {
     imageView.translatesAutoresizingMaskIntoConstraints = false
-    imageView.topAnchor.constraintEqualToAnchor(view.topAnchor, constant: 20).active = true
-    imageView.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor, constant: -20).active = true
-    imageView.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor, constant: 20).active = true
-    imageView.trailingAnchor.constraintEqualToAnchor(view.trailingAnchor, constant: -20).active = true
+    imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
+    imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+    imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+    imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
   }
 }

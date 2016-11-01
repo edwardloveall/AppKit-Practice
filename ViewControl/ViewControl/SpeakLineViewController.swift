@@ -40,8 +40,8 @@ class SpeakLineViewController: NSViewController,
 
   func setInterface() {
     let defaultVoice = NSSpeechSynthesizer.defaultVoice()
-    if let defaultRow = voices.indexOf(defaultVoice) {
-      let indices = NSIndexSet(index: defaultRow)
+    if let defaultRow = voices.index(of: defaultVoice) {
+      let indices = IndexSet(integer: defaultRow)
       voicesTable.selectRowIndexes(indices, byExtendingSelection: false)
       voicesTable.scrollRowToVisible(defaultRow)
     }
@@ -49,80 +49,80 @@ class SpeakLineViewController: NSViewController,
 
   // MARK: - Action Methods
 
-  @IBAction func speakIt(sender: NSButton) {
+  @IBAction func speakIt(_ sender: NSButton) {
     let string = textField.stringValue
     if string.isEmpty {
       print("string from \(textField) is empty")
     } else {
-      speechSynth.startSpeakingString(string)
+      speechSynth.startSpeaking(string)
       isStarted = true
     }
   }
 
-  @IBAction func stopIt(sender: NSButton) {
+  @IBAction func stopIt(_ sender: NSButton) {
     speechSynth.stopSpeaking()
   }
 
   func updateButtons() {
     if isStarted {
-      speakButton.enabled = false
-      stopButton.enabled = true
+      speakButton.isEnabled = false
+      stopButton.isEnabled = true
     } else {
-      speakButton.enabled = true
-      stopButton.enabled = false
+      speakButton.isEnabled = true
+      stopButton.isEnabled = false
     }
   }
 
   func disableTextField() {
     if isStarted {
-      textField.enabled = false
+      textField.isEnabled = false
     } else {
-      textField.enabled = true
+      textField.isEnabled = true
     }
   }
 
-  func voiceNameForIdentifier(identifier: String) -> String? {
-    let attributes = NSSpeechSynthesizer.attributesForVoice(identifier)
+  func voiceNameForIdentifier(_ identifier: String) -> String? {
+    let attributes = NSSpeechSynthesizer.attributes(forVoice: identifier)
     return attributes[NSVoiceName] as? String
   }
 
-  @IBAction func reset(sender: NSButton) {
+  @IBAction func reset(_ sender: NSButton) {
     setInterface()
   }
 
   // MARK: - NSSpeechSynthesizerDelegate
 
-  func speechSynthesizer(sender: NSSpeechSynthesizer,
+  func speechSynthesizer(_ sender: NSSpeechSynthesizer,
                          didFinishSpeaking finishedSpeaking: Bool) {
     isStarted = false
     textField.stringValue = textField.stringValue
   }
 
-  func speechSynthesizer(sender: NSSpeechSynthesizer,
+  func speechSynthesizer(_ sender: NSSpeechSynthesizer,
                          willSpeakWord characterRange: NSRange,
-                                       ofString string: String) {
+                                       of string: String) {
     let attributedString = NSMutableAttributedString(string: string)
     attributedString.addAttribute(NSForegroundColorAttributeName,
-                                  value: NSColor.purpleColor(),
+                                  value: NSColor.purple,
                                   range: characterRange)
     textField.attributedStringValue = attributedString
   }
 
   // MARK: - NSWindowDelegate
 
-  func windowShouldClose(sender: AnyObject) -> Bool {
+  func windowShouldClose(_ sender: Any) -> Bool {
     return !isStarted
   }
 
   // MARK: - NSTableViewDataSource
 
-  func numberOfRowsInTableView(tableView: NSTableView) -> Int {
+  func numberOfRows(in tableView: NSTableView) -> Int {
     return voices.count
   }
 
-  func tableView(tableView: NSTableView,
-                 objectValueForTableColumn tableColumn: NSTableColumn?,
-                                           row: Int) -> AnyObject? {
+  func tableView(_ tableView: NSTableView,
+                 objectValueFor tableColumn: NSTableColumn?,
+                                           row: Int) -> Any? {
     let voice = voices[row]
     let voiceName = voiceNameForIdentifier(voice)
     return voiceName
@@ -130,7 +130,7 @@ class SpeakLineViewController: NSViewController,
 
   // MARK: - NSTableViewDelegate
 
-  func tableViewSelectionDidChange(notification: NSNotification) {
+  func tableViewSelectionDidChange(_ notification: Notification) {
     let row = voicesTable.selectedRow
     if row == -1 {
       speechSynth.setVoice(nil)

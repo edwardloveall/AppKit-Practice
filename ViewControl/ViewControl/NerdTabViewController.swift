@@ -9,11 +9,11 @@ class NerdTabViewController: NSViewController {
   var container = NSView()
   var buttons = [NSButton]()
 
-  func selectTabAtIndex(index: Int) {
+  func selectTabAtIndex(_ index: Int) {
     let range = 0..<childViewControllers.count
     assert(range.contains(index), "index out of range")
 
-    for (i, button) in buttons.enumerate() {
+    for (i, button) in buttons.enumerated() {
       if index == i {
         button.state = NSOnState
       } else {
@@ -24,13 +24,13 @@ class NerdTabViewController: NSViewController {
     container.subviews = []
     container.addSubview(imageView)
     imageView.translatesAutoresizingMaskIntoConstraints = false
-    imageView.topAnchor.constraintEqualToAnchor(container.topAnchor).active = true
-    imageView.bottomAnchor.constraintEqualToAnchor(container.bottomAnchor).active = true
-    imageView.leadingAnchor.constraintEqualToAnchor(container.leadingAnchor).active = true
-    imageView.trailingAnchor.constraintEqualToAnchor(container.trailingAnchor).active = true
+    imageView.topAnchor.constraint(equalTo: container.topAnchor).isActive = true
+    imageView.bottomAnchor.constraint(equalTo: container.bottomAnchor).isActive = true
+    imageView.leadingAnchor.constraint(equalTo: container.leadingAnchor).isActive = true
+    imageView.trailingAnchor.constraint(equalTo: container.trailingAnchor).isActive = true
   }
 
-  func selectTab(sender: NSButton) {
+  func selectTab(_ sender: NSButton) {
     let index = sender.tag
     selectTabAtIndex(index)
   }
@@ -45,12 +45,12 @@ class NerdTabViewController: NSViewController {
     let buttonWidth: CGFloat = 28
     let buttonHeight: CGFloat = 28
 
-    buttons = childViewControllers.enumerate().map {
+    buttons = childViewControllers.enumerated().map {
       (index, viewController) -> NSButton in
       let button = NSButton()
-      button.setButtonType(.ToggleButton)
+      button.setButtonType(.toggle)
       button.translatesAutoresizingMaskIntoConstraints = false
-      button.bordered = false
+      button.isBordered = false
       button.target = self
       button.action = #selector(NerdTabViewController.selectTab(_:))
       button.tag = index
@@ -59,58 +59,58 @@ class NerdTabViewController: NSViewController {
       } else {
         button.title = viewController.title ?? "View Controller"
       }
-      button.widthAnchor.constraintGreaterThanOrEqualToConstant(buttonWidth).active = true
-      button.heightAnchor.constraintEqualToConstant(buttonHeight).active = true
+      button.widthAnchor.constraint(greaterThanOrEqualToConstant: buttonWidth).isActive = true
+      button.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
       return button
     }
 
     let stackView = NSStackView()
     stackView.translatesAutoresizingMaskIntoConstraints = false
-    stackView.orientation = .Horizontal
+    stackView.orientation = .horizontal
     stackView.spacing = 4
     for button in buttons {
-      stackView.addView(button, inGravity: .Center)
+      stackView.addView(button, in: .center)
     }
 
     container.translatesAutoresizingMaskIntoConstraints = false
 
     let separator = NSBox()
-    separator.boxType = .Separator
+    separator.boxType = .separator
     separator.translatesAutoresizingMaskIntoConstraints = false
 
     view.subviews = [stackView, separator, container]
 
-    stackView.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor).active = true
-    stackView.trailingAnchor.constraintEqualToAnchor(view.trailingAnchor).active = true
-    stackView.topAnchor.constraintEqualToAnchor(view.topAnchor).active = true
-    stackView.bottomAnchor.constraintEqualToAnchor(separator.topAnchor).active = true
-    stackView.heightAnchor.constraintEqualToConstant(buttonHeight).active = true
-    separator.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor).active = true
-    separator.trailingAnchor.constraintEqualToAnchor(view.trailingAnchor).active = true
-    separator.bottomAnchor.constraintEqualToAnchor(container.topAnchor).active = true
-    separator.heightAnchor.constraintEqualToConstant(1).active = true
-    container.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor).active = true
-    container.trailingAnchor.constraintEqualToAnchor(view.trailingAnchor).active = true
-    container.widthAnchor.constraintGreaterThanOrEqualToConstant(100).active = true
-    container.heightAnchor.constraintGreaterThanOrEqualToConstant(100).active = true
-    container.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor).active = true
+    stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+    stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    stackView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+    stackView.bottomAnchor.constraint(equalTo: separator.topAnchor).isActive = true
+    stackView.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
+    separator.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+    separator.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    separator.bottomAnchor.constraint(equalTo: container.topAnchor).isActive = true
+    separator.heightAnchor.constraint(equalToConstant: 1).isActive = true
+    container.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+    container.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    container.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
+    container.heightAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
+    container.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 
     if childViewControllers.count > 0 {
       selectTabAtIndex(0)
     }
   }
 
-  override func insertChildViewController(childViewController: NSViewController,
-                                          atIndex index: Int) {
-    super.insertChildViewController(childViewController, atIndex: index)
-    if viewLoaded {
+  override func insertChildViewController(_ childViewController: NSViewController,
+                                          at index: Int) {
+    super.insertChildViewController(childViewController, at: index)
+    if isViewLoaded {
       reset()
     }
   }
 
-  override func removeChildViewControllerAtIndex(index: Int) {
-    super.removeChildViewControllerAtIndex(index)
-    if viewLoaded {
+  override func removeChildViewController(at index: Int) {
+    super.removeChildViewController(at: index)
+    if isViewLoaded {
       reset()
     }
   }
