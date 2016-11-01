@@ -34,7 +34,10 @@ class SourceViewController: NSViewController, NSTableViewDataSource, NSTableView
     guard let vw = tableView.make(withIdentifier: tableColumn!.identifier, owner: self) as? NSTableCellView
           else { return nil }
 
+    let image = NSImage(named: pictures[row])
     vw.textField?.stringValue = pictures[row]
+    vw.imageView?.image = image
+
     return vw
   }
 
