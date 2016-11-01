@@ -7,14 +7,14 @@ class ItemView: NSView {
 
   var button: NSButton?
 
-  override func drawRect(dirtyRect: NSRect) {
-    super.drawRect(dirtyRect)
+  override func draw(_ dirtyRect: NSRect) {
+    super.draw(dirtyRect)
   }
 
   override init(frame frameRect: NSRect) {
     super.init(frame: NSRect(origin: frameRect.origin, size: itemSize))
     let newButton = NSButton(frame: NSRect(origin: buttonOrigin, size: buttonSize))
-    newButton.bezelStyle = .RoundedBezelStyle
+    newButton.bezelStyle = .rounded
     addSubview(newButton)
     button = newButton
   }
@@ -23,7 +23,7 @@ class ItemView: NSView {
     fatalError("init(coder:) has not been implemented")
   }
 
-  func setButtonTitle(title: String) {
+  func setButtonTitle(_ title: String) {
     button!.title = title
   }
 }

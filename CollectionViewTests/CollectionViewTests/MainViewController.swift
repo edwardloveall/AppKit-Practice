@@ -12,16 +12,16 @@ class MainViewController: NSViewController {
     collectionView?.itemPrototype = CollectionViewItem()
     collectionView?.content = self.titles
     collectionView?.autoresizingMask = NSAutoresizingMaskOptions([
-      .ViewWidthSizable,
-      .ViewMaxXMargin,
-      .ViewMinYMargin,
-      .ViewHeightSizable,
-      .ViewMaxYMargin
+      .viewWidthSizable,
+      .viewMaxXMargin,
+      .viewMinYMargin,
+      .viewHeightSizable,
+      .viewMaxYMargin
     ])
 
-    for (index, _) in titles.enumerate() {
+    for (index, _) in titles.enumerated() {
       guard
-        let item = self.collectionView!.itemAtIndex(index) as? CollectionViewItem
+        let item = self.collectionView!.item(at: index) as? CollectionViewItem
       else {
         fatalError("could not get item")
       }
