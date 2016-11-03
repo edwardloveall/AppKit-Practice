@@ -79,10 +79,26 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
     if resultString.contains("4B") {
       let alert = NSAlert()
       alert.messageText = "You win!"
-      alert.informativeText = "Congratulations! Click OK to play again."
+      alert.informativeText = winMessage()
 
       alert.runModal()
       startNewGame()
     }
+  }
+
+  func winMessage() -> String {
+    var message: String
+    switch guesses.count {
+    case 0..<10:
+      message = "Nice work!"
+    case 10..<20:
+      message = "Game complete."
+    default:
+      message = "Try harder."
+    }
+
+    message = "\(message) You beat the game in \(guesses.count) moves."
+
+    return message
   }
 }
