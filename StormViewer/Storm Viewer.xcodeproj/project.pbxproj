@@ -26,12 +26,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3920546B1DC8D6DA005A0AEB /* Project1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project1.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3920546E1DC8D6DA005A0AEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		392054701DC8D6DA005A0AEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		392054721DC8D6DA005A0AEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3920546B1DC8D6DA005A0AEB /* Storm Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Storm Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3920546E1DC8D6DA005A0AEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
+		392054701DC8D6DA005A0AEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
+		392054721DC8D6DA005A0AEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		392054751DC8D6DA005A0AEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		392054771DC8D6DA005A0AEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		392054771DC8D6DA005A0AEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		3920547E1DC8D997005A0AEB /* nssl0033.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0033.jpg; sourceTree = "<group>"; };
 		3920547F1DC8D997005A0AEB /* nssl0034.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0034.jpg; sourceTree = "<group>"; };
 		392054801DC8D997005A0AEB /* nssl0041.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0041.jpg; sourceTree = "<group>"; };
@@ -42,8 +42,8 @@
 		392054851DC8D997005A0AEB /* nssl0049.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0049.jpg; sourceTree = "<group>"; };
 		392054861DC8D997005A0AEB /* nssl0051.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0051.jpg; sourceTree = "<group>"; };
 		392054871DC8D997005A0AEB /* nssl0091.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0091.jpg; sourceTree = "<group>"; };
-		392054921DC8F7F4005A0AEB /* SourceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceViewController.swift; sourceTree = "<group>"; };
-		392054941DC8FE58005A0AEB /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		392054921DC8F7F4005A0AEB /* SourceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SourceViewController.swift; path = ../SourceViewController.swift; sourceTree = "<group>"; };
+		392054941DC8FE58005A0AEB /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = ../DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +60,7 @@
 		392054621DC8D6DA005A0AEB = {
 			isa = PBXGroup;
 			children = (
-				3920546D1DC8D6DA005A0AEB /* Project1 */,
+				3920546D1DC8D6DA005A0AEB /* Storm Viewer */,
 				3920546C1DC8D6DA005A0AEB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,12 +68,12 @@
 		3920546C1DC8D6DA005A0AEB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3920546B1DC8D6DA005A0AEB /* Project1.app */,
+				3920546B1DC8D6DA005A0AEB /* Storm Viewer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3920546D1DC8D6DA005A0AEB /* Project1 */ = {
+		3920546D1DC8D6DA005A0AEB /* Storm Viewer */ = {
 			isa = PBXGroup;
 			children = (
 				3920546E1DC8D6DA005A0AEB /* AppDelegate.swift */,
@@ -85,6 +85,7 @@
 				392054771DC8D6DA005A0AEB /* Info.plist */,
 				3920547D1DC8D997005A0AEB /* Content */,
 			);
+			name = "Storm Viewer";
 			path = Project1;
 			sourceTree = "<group>";
 		};
@@ -108,9 +109,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3920546A1DC8D6DA005A0AEB /* Project1 */ = {
+		3920546A1DC8D6DA005A0AEB /* Storm Viewer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3920547A1DC8D6DA005A0AEB /* Build configuration list for PBXNativeTarget "Project1" */;
+			buildConfigurationList = 3920547A1DC8D6DA005A0AEB /* Build configuration list for PBXNativeTarget "Storm Viewer" */;
 			buildPhases = (
 				392054671DC8D6DA005A0AEB /* Sources */,
 				392054681DC8D6DA005A0AEB /* Frameworks */,
@@ -120,9 +121,9 @@
 			);
 			dependencies = (
 			);
-			name = Project1;
+			name = "Storm Viewer";
 			productName = Project1;
-			productReference = 3920546B1DC8D6DA005A0AEB /* Project1.app */;
+			productReference = 3920546B1DC8D6DA005A0AEB /* Storm Viewer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -142,7 +143,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 392054661DC8D6DA005A0AEB /* Build configuration list for PBXProject "Project1" */;
+			buildConfigurationList = 392054661DC8D6DA005A0AEB /* Build configuration list for PBXProject "Storm Viewer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -155,7 +156,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3920546A1DC8D6DA005A0AEB /* Project1 */,
+				3920546A1DC8D6DA005A0AEB /* Storm Viewer */,
 			);
 		};
 /* End PBXProject section */
@@ -203,6 +204,7 @@
 				392054751DC8D6DA005A0AEB /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -329,7 +331,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		392054661DC8D6DA005A0AEB /* Build configuration list for PBXProject "Project1" */ = {
+		392054661DC8D6DA005A0AEB /* Build configuration list for PBXProject "Storm Viewer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				392054781DC8D6DA005A0AEB /* Debug */,
@@ -338,13 +340,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3920547A1DC8D6DA005A0AEB /* Build configuration list for PBXNativeTarget "Project1" */ = {
+		3920547A1DC8D6DA005A0AEB /* Build configuration list for PBXNativeTarget "Storm Viewer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3920547B1DC8D6DA005A0AEB /* Debug */,
 				3920547C1DC8D6DA005A0AEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
