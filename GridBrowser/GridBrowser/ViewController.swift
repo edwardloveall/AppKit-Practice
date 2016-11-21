@@ -77,6 +77,7 @@ class ViewController: NSViewController,
       else { return }
 
     button.image = NSImage(named: NSImageNameRefreshTemplate)
+    validateNavigationButtons()
   }
 
   @IBAction func adjustRows(_ sender: NSSegmentedControl) {
@@ -149,6 +150,7 @@ class ViewController: NSViewController,
     if let windowController = view.window?.windowController as? WindowController {
       windowController.addressEntry.stringValue = selectedWebView.url?.absoluteString ?? ""
     }
+    validateNavigationButtons()
   }
 
   func webViewClicked(recognizer: NSClickGestureRecognizer) {
@@ -177,5 +179,16 @@ class ViewController: NSViewController,
     if let windowController = view.window?.windowController as? WindowController {
       windowController.addressEntry.stringValue = webView.url?.absoluteString ?? ""
     }
+  }
+
+  func validateNavigationButtons() {
+    guard
+      let webView = selectedWebView,
+      let windowController = view.window?.windowController as? WindowController,
+      let navigation = windowController.navigation
+    else { return }
+
+    navigation.setEnabled(webView.canGoBack, forSegment: 0)
+    navigation.setEnabled(webView.canGoForward, forSegment: 1)
   }
 }
