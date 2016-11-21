@@ -32,7 +32,9 @@ class ViewController: NSViewController,
   }
 
   @IBAction func urlEntered(_ sender: NSTextField) {
-    guard let selected = selectedWebView else { return }
+    guard
+      let selected = selectedWebView
+    else { return }
 
     if let url = URL(string: sender.stringValue) {
       selected.load(URLRequest(url: url))
@@ -52,7 +54,29 @@ class ViewController: NSViewController,
   @IBAction func loadControlClicked(_ sender: NSButton) {
     guard let selected = selectedWebView else { return }
 
-    selected.reload()
+    if selected.isLoading {
+      selected.stopLoading()
+    } else {
+      selected.reload()
+    }
+  }
+
+  func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+    guard
+      let windowController = view.window?.windowController as? WindowController,
+      let button = windowController.loadControlButton
+      else { return }
+
+    button.image = NSImage(named: NSImageNameStopProgressTemplate)
+  }
+
+  func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+    guard
+      let windowController = view.window?.windowController as? WindowController,
+      let button = windowController.loadControlButton
+      else { return }
+
+    button.image = NSImage(named: NSImageNameRefreshTemplate)
   }
 
   @IBAction func adjustRows(_ sender: NSSegmentedControl) {

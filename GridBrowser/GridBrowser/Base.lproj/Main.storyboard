@@ -809,6 +809,7 @@
                     </window>
                     <connections>
                         <outlet property="addressEntry" destination="WTb-q2-RbH" id="ms2-lc-Fq2"/>
+                        <outlet property="loadControlButton" destination="Jiz-wd-74F" id="WEa-Lr-Suc"/>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
                     </connections>
                 </windowController>
